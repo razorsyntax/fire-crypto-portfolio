@@ -1,0 +1,68 @@
+<GridLayout rows="auto,auto,*" columns="*">
+    <StackLayout row="0" col="0" id="portfolio-header" class="default-background" height="30%">
+        <app-portfolio-header [priceNIntervals]="pricesIntervals" [userprefs]="userprefs"></app-portfolio-header>
+        <StackLayout class="default-background">
+            <StackLayout [visibility]="showSpinner ? 'visible' : 'collapsed'" class="default-background">
+                <!-- <StackLayout minWidth="100%"
+                        android:marginLeft="-48.2"
+                        android:marginRight="-48.2"
+                        ios:marginLeft="-80"
+                        ios:marginRight="61"
+                        ios:marginBottom="1">
+                    <app-area-chart (toggleSpinner)="toggleSpinner($event)"></app-area-chart>
+                </StackLayout> -->
+                <StackLayout minWidth="100%" minHeight="100%"
+                        android:marginLeft="-3"
+                        android:marginRight="-3.2"
+                        ios:marginLeft="-3.1"
+                        ios:marginRight="0"
+                        class="default-background">
+                        <StackLayout marginTop="4">
+                          <app-custom-charts 
+                            class="default-background"
+                            [chartName]="'areachart'" 
+                            (toggleSpinner)="toggleSpinner($event)" 
+                            (hasData)="hasData($event)">
+                          </app-custom-charts>    
+                        </StackLayout>
+                    
+                </StackLayout>
+            </StackLayout>
+            <StackLayout [visibility]="!showSpinner ? 'visible' : 'collapsed'" backgroundColor="#342c2d">
+                <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true" backgroundColor="#342c2d"></ActivityIndicator>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout row="1" col="0" marginTop="-10">
+        <app-tabs 
+            [tabCharArr]="tabs" 
+            [tabFontSize]="'textsize-hdr6'" 
+            [borders]="tabBorders"
+            (tabSelected)="tabChange($event)">
+        </app-tabs>
+    </StackLayout>
+    <StackLayout row="2" col="0" id="portfolio-tabs" class="font-awesome">
+        <SegmentedBar 
+            [items]="items" 
+            (selectedIndexChange)="onSelectedIndexChange($event)"
+            (loaded)="onBarLoaded($event)" 
+            style.fontSize="32"
+            style.margin="0"
+            class="m-5 fontawesome fontawesome-solid"></SegmentedBar>
+
+            <StackLayout [ngSwitch]="tabType">
+                <GridLayout *ngSwitchCase="'portfolio'" id="portfolioID" rows="*" cols="*">
+                    <StackLayout row="0" col="0">
+                        <app-portfolio-list [priceIntervals]="pricesIntervals" [userprefs]="userprefs"></app-portfolio-list>
+                    </StackLayout>
+                </GridLayout>
+                <GridLayout *ngSwitchCase="'watchlist'" id="watchlistID" rows="*" cols="*">
+                    <StackLayout row="0" col="0">
+                        <app-watchlist-list [priceIntervals]="pricesIntervals"></app-watchlist-list>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+
+        
+    </StackLayout>
+</GridLayout>

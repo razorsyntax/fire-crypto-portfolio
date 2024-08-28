@@ -1,0 +1,33 @@
+<StackLayout class="cap-header default-background" orientation="vertical">
+    <StackLayout>
+        <GridLayout rows="auto" columns="*,*,*" class="header-list-item v-align-center">
+            <StackLayout row="0" col="0" class="center-center">
+                <app-stacked-text 
+                    [topText]="marketcapHeaderText" 
+                    [bottomText]="loadTotalValue(globalMarketData.marketcap) | abbreviatenumber:globalMarketData.defaultCurrency"
+                    [colour]="'#3aa1e9'"
+                    [topTextClass]="'textsize-reg'"
+                    [bottomTextClass]="marketCapClass">
+                </app-stacked-text>
+            </StackLayout>
+            <StackLayout row="0" col="1" class="center-center">
+                <app-stacked-text 
+                    [topText]="twentyFourHrVolText" 
+                    [bottomText]="loadTotalValue(globalMarketData.twentyfourhrvol) | abbreviatenumber:globalMarketData.defaultCurrency"
+                    [colour]="'#3aa1e9'"
+                    [topTextClass]="'textsize-reg'"
+                    [bottomTextClass]="volumeClass">
+                </app-stacked-text>
+            </StackLayout>
+            <StackLayout row="0" col="2" class="center-center">
+                <app-stacked-text 
+                    [topText]="dominanceText" 
+                    [bottomText]='globalMarketData.dominance + "%"' 
+                    [colour]="'#3aa1e9'"
+                    [topTextClass]="'textsize-reg'"
+                    [bottomTextClass]="dominanceClass">
+                </app-stacked-text>
+            </StackLayout>
+        </GridLayout>
+    </StackLayout>
+</StackLayout>

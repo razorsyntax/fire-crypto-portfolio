@@ -1,0 +1,40 @@
+<StackLayout>
+  <GridLayout rows="*,*" columns="*">
+
+    <StackLayout row="0" col="0">
+      <GridLayout rows="*" columns="*,50">
+        <StackLayout row="0" col="0" class="h-align-left">
+           <Label [text]="listName" (tap)="tagSelected(tagId)" color="white" textWrap="true" margin="5"></Label> 
+        </StackLayout>
+        <!-- Pin to be uncommented for next release -->
+        <!-- <StackLayout row="0" col="1" class="h-align-right" marginRight="8" marginTop="3">
+            <Label margin="5" [color]="pinColor" (tap)="pinToTop($event, tagId)" text="&#xf08d;" class="fontawesome" textWrap="true"></Label>
+        </StackLayout> -->
+      </GridLayout>
+    </StackLayout>
+    
+    <StackLayout row="1" col="0">
+        <RadListView
+              #radList
+              height="115"
+              [items]="listCoins"
+              pullToRefresh="false"
+              selectionBehavior="None"
+              scrollDirection="Horizontal">
+            <ng-template tkListItemTemplate let-item="item">
+              <StackLayout (tap)="loadCoinDetailsPage(item)">
+                <StackLayout width="80" height="100" margin="5" backgroundColor="#463f40" borderRadius="5">
+                  <GridLayout rows="*,20" columns="*">
+                      <Image row="0" col="0" [src]="item?.path" width="90%" class="crypto-image"></Image>
+                      <Label row="1" col="0"color="white" [text]="item?.symbol" class="center-center" textWrap="true"></Label>
+                  </GridLayout>
+                </StackLayout>
+              </StackLayout>
+            </ng-template>
+            <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearLayout>
+        </RadListView>
+    </StackLayout>
+
+  </GridLayout>
+</StackLayout>
+

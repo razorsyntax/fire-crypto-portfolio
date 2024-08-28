@@ -1,0 +1,58 @@
+$white: #fff;
+$placeholder-grey: #9d9999;
+$border-color: #4b4b4b;
+
+.placeholder-color {
+    color: $placeholder-grey;
+}
+
+.selected {
+    color: $white;
+}
+
+.unselected {
+    color: $placeholder-grey;
+}
+
+.advanced-label {
+    margin: 5;
+}
+
+.date-picker-label {
+    font-size: 20;
+    margin: 10 5 5;
+}
+
+.time-picker-label {
+    font-size: 20;
+    margin: 5;
+}
+
+.time-picker-icon {
+    font-size: 37;
+    margin-top: 10;
+}
+
+.date-picker-icon {
+    font-size: 32;
+    margin-top: 10;
+}
+
+.margin-rl-ten {
+    margin-left: 10;
+    margin-right: 10;
+}
+
+.amount-field {
+    border-bottom-width: 1;
+    border-color: $border-color;
+    height: 40;
+    margin: 10;
+    placeholder-color: $placeholder-grey;
+    width: 200;
+}
+
+.advanced-dropdown-styling {
+    border-bottom-width: 1;
+    border-color: $border-color;
+}

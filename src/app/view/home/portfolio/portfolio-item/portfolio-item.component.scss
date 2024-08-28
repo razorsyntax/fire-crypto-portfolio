@@ -1,0 +1,58 @@
+$white: #fff;
+$crypto-background-color: #251e1f;
+$font-family-style: 'Roboto-Bold';
+$percent-color-up: #509b2a;
+$percent-color-down: #a82f27;
+$blue-text: #3aa1e9;
+
+
+.percent-down {
+    background-color: $percent-color-down;
+    font-family: $font-family-style;
+    font-size: 16;
+}
+
+.blue-text {
+    color: $blue-text;
+}
+
+.percent-up {
+    background-color: $percent-color-up;
+    font-family: $font-family-style;
+    font-size: 16;
+}
+
+.no-percent-color {
+    background-color: $crypto-background-color;
+    font-family: $font-family-style;
+    font-size: 16;
+}
+
+.icon-font {
+    font-family: 'fontawesome-webfont';
+}
+
+.data-information {
+    color: $white;
+}
+
+.crypto-image-background {
+    background-color: $crypto-background-color;
+    border-top-left-radius: 5;
+    border-top-right-radius: 5;
+}
+
+.crypto-image {
+    width: 75%;
+}
+
+.bottom-border-radius {
+    border-bottom-left-radius: 5;
+    border-bottom-right-radius: 5;
+}
+
+.price-total {
+    font-size: 14;
+    padding-bottom: 5;
+    padding-top: 5;
+}

@@ -1,0 +1,39 @@
+$black: #000;
+$white: #fff;
+$red: #f00;
+$default-background: #342c2d;
+
+// FontAwesome v4.x
+.fa {
+    font-family: 'FontAwesome';
+}
+
+.skip-intro {
+    background-color: $default-background;
+    border-color: $default-background;
+    border-radius: 4;
+    border-width: 6;
+    color: $white;
+    font-size: 18;
+    padding: 9 17;
+    width: 40%;
+}
+
+.carousel-item-desc {
+    color: $black;
+    font-size: 15;
+    text-align: center;
+}
+
+.carousel-item-circle {
+    // background: $black;
+    // clip-path: circle(80% at 50% 50%);
+    height: 100%;
+    width: 100%;
+}
+
+.carousel {
+    color: $white;
+    height: 100%;
+    width: 100%;
+}

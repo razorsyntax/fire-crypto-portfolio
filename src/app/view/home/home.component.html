@@ -1,0 +1,37 @@
+<StackLayout iosOverflowSafeArea="false" class="default-background">
+  <app-gradient-background>
+    <GridLayout rows="*,auto" columns="*">
+      <StackLayout row="0" col="0" class="">
+        <SegmentedBar
+            class="m-5"
+            [items]="items" 
+            (selectedIndexChange)="onSelectedIndexChange($event)">
+        </SegmentedBar>
+        <app-user-prefs>
+          <ng-template let-user_prefs>
+            <app-get-prices-n-intervals [userprefs]="user_prefs">
+              <ng-template let-prices_intervals>
+                <GridLayout rows="*" visibility="{{ showAppPortfolio ? 'visible' : 'collapsed' }}">
+                  <app-portfolio [pricesIntervals]="prices_intervals" [userprefs]="user_prefs"></app-portfolio>
+                </GridLayout>
+                <GridLayout rows="*" visibility="{{ showCoinDiscovery ? 'visible' : 'collapsed' }}">
+                  <app-coin-discovery [pricesIntervals]="prices_intervals"></app-coin-discovery>
+                </GridLayout>
+                <GridLayout rows="*" visibility="{{ showMarketCap ? 'visible' : 'collapsed' }}">
+                    <app-marketcap [pricesIntervals]="prices_intervals"></app-marketcap>
+                  </GridLayout>
+              </ng-template>
+            </app-get-prices-n-intervals>
+          </ng-template>
+        </app-user-prefs>
+      </StackLayout>
+      <StackLayout row="1" col="0" marginBottom="-1">
+        <app-tabs 
+            [tabCharArr]="tabs" 
+            (tabSelected)="tabChange($event)" 
+            [tabFontSize]="'textsize-huge'"
+            [borders]="tabBorders"></app-tabs>
+      </StackLayout>
+    </GridLayout>
+  </app-gradient-background>
+</StackLayout>

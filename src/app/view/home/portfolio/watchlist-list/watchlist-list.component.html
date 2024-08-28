@@ -1,0 +1,28 @@
+<StackLayout *ngIf="!watchlistLoading; else loading">
+    <StackLayout *ngIf="watchlistItem$?.length > 0; else addtowatchlist">
+        <GridLayout marginRight="4" marginLeft="4">
+            <RadListView
+                    [items]="watchlistItem$"
+                    selectionBehavior="Press"
+                    (itemSelected)="loadCoinDetailsPage($event)"
+                    pullToRefresh="true" 
+                    (pullToRefreshInitiated)="pullToRefresh($event)"
+                    (loaded)="onLoaded($event)">
+                <ng-template tkListItemTemplate let-item="item">
+                    <app-watchlist-item [watchlist]="item"></app-watchlist-item>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+    </StackLayout>
+    
+    <ng-template #addtowatchlist>
+        <StackLayout>
+            <StackLayout margin="10" (tap)="loadSearchPage($event)">
+                <app-list-placeholder [iconText]="'&#xf055;'" [placeholderText]="watchlistListComponent_DefaultText" [height]="250"></app-list-placeholder>
+            </StackLayout>
+        </StackLayout>
+    </ng-template>
+</StackLayout>
+<ng-template #loading>
+    <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true"></ActivityIndicator>
+</ng-template>

@@ -1,0 +1,36 @@
+$grey1: #c4c4c4;
+$white: #fff;
+
+.header-list-item {
+    border-radius: 5;
+    color: $white;
+    margin: 5;
+    padding: 5;
+}
+
+ActionBar {
+    border-color: transparent;
+    border-width: 1;
+}
+
+.header-text {
+    color: $white;
+    font-size: 15;
+}
+
+.header-cap {
+    font-size: 22;
+}
+
+.cap-header {
+    border-bottom-color: $grey1;
+    border-bottom-width: 1;
+}
+
+.android :host .text-margin-top {
+    margin-top: 5;
+}
+
+.ios :host.text-margin-top {
+    margin-top: 10;
+}

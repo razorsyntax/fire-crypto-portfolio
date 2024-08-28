@@ -1,0 +1,51 @@
+<app-gradient-background>
+  <GridLayout rows="auto,*" columns="*">
+    <StackLayout row="0" col="0">
+      <StackLayout row="0" col="0" class="default-background">
+        <GridLayout rows="auto,auto" columns="auto,*">
+          <StackLayout row="0" col="0" (tap)="closeSearchPage()" class="center-center">
+            <Label text="&#xF104;" class="fontawesome close-search"></Label>
+          </StackLayout>
+          <StackLayout row="0" col="1">
+            <SearchBar 
+              textFieldBackgroundColor="#342c2d" 
+              android:padding="5" 
+              textFieldHintColor="#c4c4c4"
+              borderBottomColor="#FFFFFF" 
+              [hint]="defaultHintText" 
+              (loaded)="onSearchBarLoaded($event)" 
+              (textChange)="onSubmit($event)"
+              (clear)="onClear($event)" 
+              (submit)="onSubmit($event)"
+              class="search-bar default-background">
+            </SearchBar>
+          </StackLayout>
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout row="1" col="0">
+      <StackLayout *ngIf="myItems$?.length; else empty">
+        <ListView [items]="myItems$" class="list-group" separatorColor="#e0e0e0" backgroundColor="rgba(255,255,255,0)"
+          height="100%" separatorColor="transparent" android:margin="5">
+          <ng-template let-item="item">
+            <StackLayout class="item list-group-item default-background" ios:margin="5" android:margin="10" (tap)="loadCoinDetailsPage(item)">
+              <Label [text]="item.currency" class="textsize-lrg center-text textfont-reg font-color"
+                textWrap="true"></Label>
+            </StackLayout>
+          </ng-template>
+        </ListView>
+      </StackLayout>
+      <ng-template #empty>
+        <StackLayout margin="5">
+          <StackLayout width="100%" class="default-background">
+            <Label text="Not found." textWrap="true" class="textsize-hdr3 font-color center-center"></Label>
+            <Label text="&#xF119;" textWrap="true" class="textsize-hdr6 font-color center-center fontawesome"margin="10"></Label>
+          </StackLayout>
+        </StackLayout>
+      </ng-template>
+      <StackLayout [visibility]="toggleSpinner ? 'visible' : 'collapsed'">
+        <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true"></ActivityIndicator>
+      </StackLayout>
+    </StackLayout>
+  </GridLayout>
+</app-gradient-background>

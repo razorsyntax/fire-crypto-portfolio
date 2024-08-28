@@ -1,0 +1,21 @@
+<app-gradient-background>
+    <StackLayout margin="20" class="default-background" borderRadius="5" color="white">
+        <StackLayout marginTop="10" class="center-center">
+            <GridLayout rows="auto" columns="auto,auto">
+                <Label row="0" col="0" [text]="titleText" class="textsize-lrg center-center" textWrap="false"></Label>
+                <Label row="0" col="1" text="&#xf11A;" class="textsize-lrg fontawesome center-center" textWrap="true"></Label>
+            </GridLayout>
+        </StackLayout>
+        <StackLayout marginTop="10">
+           <GridLayout rows="auto,auto" columns="*">
+            <StackLayout row="0" col="0">
+                <Label text="Fire works better with internet." class="textsize-med center-center" textWrap="true"></Label>
+            </StackLayout>
+            <StackLayout row="1" col="0" padding="20" (tap)="tryReload()">
+                <Label text="Try again?" class="center-center" textWrap="true"></Label>
+                <Label text="&#xf1E2; {{ count }}" class="textsize-hdr4 fontawesome text-blue center-center" textWrap="true" marginTop="10"></Label>
+            </StackLayout>
+        </GridLayout> 
+        </StackLayout>
+    </StackLayout>
+</app-gradient-background>

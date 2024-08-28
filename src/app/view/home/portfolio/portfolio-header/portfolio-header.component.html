@@ -1,0 +1,17 @@
+<StackLayout>
+    <GridLayout rows="auto" columns="auto,*,auto" class="default-background">
+        <StackLayout row="0" col="0" (tap)="searchCoin()">
+            <Label text="&#xF002;" textWrap="true" class="fontawesome textsize-lrg font-color" margin="10"></Label>
+        </StackLayout>
+        <StackLayout row="0" col="1">
+            <Label textWrap="true" class="textfont-bold bold-weight textsize-hdr6 center-text font-color">
+                <FormattedString>
+                    <Span [text]="portfolioTotal | customcurrency:defaultUserCurrency"></Span>
+                </FormattedString>
+            </Label>
+        </StackLayout>
+        <StackLayout row="0" col="2" (tap)="openSettings()">
+            <Label text="&#xF013;" textWrap="true" class="fontawesome textsize-lrg font-color" margin="10"></Label>
+        </StackLayout>
+    </GridLayout>
+</StackLayout>

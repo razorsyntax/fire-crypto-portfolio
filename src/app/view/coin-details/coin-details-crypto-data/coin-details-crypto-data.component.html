@@ -1,0 +1,179 @@
+<!-- crypto data -->
+<StackLayout>
+  <GridLayout rows="auto,auto,auto" columns="*,*" marginRight="10" marginLeft="10">
+
+    <!-- Coin Stats -->
+    <StackLayout row="0" col="0" margin="10">
+      <GridLayout rows="auto" 
+          android:columns="auto,*" 
+          ios:columns="auto,*">
+        <Label row="0" col="0" 
+          android:class="android-meta-text" 
+          ios:class="ios-meta-text" 
+          fontSize="24" 
+          [text]="statsText"
+          color="#ffffff" 
+          textWrap="false">
+        </Label>
+        <Label row="0" col="1" 
+          android:class="android-meta-text h-align-left" 
+          ios:class="ios-meta-text h-align-left"
+          [text]="''" 
+          color="#3aa1e9" 
+          textWrap="false">
+        </Label>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- Price -->
+    <StackLayout row="1" col="0" margin="10">
+      <GridLayout rows="auto" 
+          android:columns="*,auto" 
+          ios:columns="*,auto">
+        <Label row="0" col="0" 
+            android:class="android-meta-text h-align-left" 
+            ios:class="ios-meta-text h-align-left"
+            [text]="priceText" 
+            color="#ffffff" 
+            textWrap="false">
+        </Label>
+        <Label row="0" col="1" 
+            android:class="android-meta-text h-align-right" 
+            ios:class="ios-meta-text h-align-right"
+            [text]="coinData.price | customcurrency:coinData.defaultcurrency" 
+            color="#3aa1e9"
+            textWrap="false" 
+            fontWeight="bold">
+        </Label>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- 24 Hour Change -->
+    <StackLayout row="1" col="1" margin="10">
+      <GridLayout rows="auto" 
+          android:columns="*,auto" 
+          ios:columns="*,auto">
+        <Label row="0" col="0" 
+            android:class="android-meta-text" 
+            ios:class="ios-meta-text"
+            [text]="twentyFourHrChangeText" 
+            color="#ffffff" 
+            textWrap="false">
+        </Label>
+        <Label row="0" col="1" 
+          android:class="h-align-right {{ setPercentColor(coinData.percent24Hr) }}" 
+          ios:class="h-align-right {{ setPercentColor(coinData.percent24Hr) }}"
+            [text]="coinData.percent24Hr + '%'"
+            textWrap="false"
+            android:fontSize="17"
+            ios:fontSize="14"
+            fontWeight="bold">
+        </Label>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- Market Cap -->
+    <StackLayout row="2" col="0" margin="10">
+      <GridLayout rows="auto" 
+          android:columns="*,auto" 
+          ios:columns="*,auto">
+        <Label row="0" col="0" 
+            android:class="android-meta-text" 
+            ios:class="ios-meta-text"
+            [text]="marketcapTopText" 
+            color="#ffffff" textWrap="false"></Label>
+        <Label row="0" col="1" 
+            android:class="android-meta-text h-align-right" 
+            ios:class="ios-meta-text h-align-right"
+            [text]="loadTotalValue(coinData?.marketcap) | abbreviatenumber:coinData.defaultcurrency" 
+            color="#3aa1e9"
+            textWrap="false"
+            fontWeight="bold">
+        </Label>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- 24 Hour Volume -->
+    <StackLayout row="2" col="1" margin="10">
+      <GridLayout rows="auto" 
+          android:columns="*,auto" 
+          ios:columns="*,auto">
+        <Label row="0" col="0"  
+          android:class="android-meta-text" 
+          ios:class="ios-meta-text"
+          [text]="twentyFourHrTopText" color="#ffffff" textWrap="false"></Label>
+        <Label row="0" col="1" 
+          android:class="android-meta-text h-align-right" 
+          ios:class="ios-meta-text h-align-right"
+          [text]="loadTotalValue(coinData?.twentyfourhrvol) | abbreviatenumber:coinData.defaultcurrency"
+          color="#3aa1e9"
+          textWrap="false"
+          fontWeight="bold">
+        </Label>
+      </GridLayout>
+    </StackLayout>
+  </GridLayout>
+      <!-- Available Supply -->
+      <StackLayout margin="10" paddingLeft="10">
+          <GridLayout rows="*" 
+              android:columns="auto,20,auto" 
+              ios:columns="auto,20,auto">
+            <Label row="0" col="0" 
+                android:class="android-meta-text" 
+                ios:class="ios-meta-text"
+                [text]="supplyText" 
+                color="#ffffff" 
+                textWrap="false">
+            </Label>
+            <Label row="0" col="1" 
+              android:class="android-meta-text"
+              ios:class="ios-meta-text h-align-left" 
+              [text]="'  '" color="#3aa1e9"
+              textWrap="true"></Label>
+            <Label row="0" col="2" colSpan="3"
+              android:class="android-meta-text h-align-right"
+              ios:class="ios-meta-text h-align-right" 
+              [text]="coinData.availablesupply" 
+              color="#3aa1e9"
+              textWrap="true"
+              fontWeight="bold">
+            </Label>
+          </GridLayout>
+        </StackLayout>
+</StackLayout>
+
+
+<!-- financial chart -->
+<StackLayout>
+  <GridLayout rows="auto,*" columns="*">
+    <StackLayout row="0" col="0">
+      <StackLayout class="chart-container">
+        <StackLayout *ngIf="cryptoSymbolAndRate.symbol?.length > 0; else loading">
+          <StackLayout [visibility]="showSpinner ? 'visible' : 'collapsed'">
+              <app-custom-charts 
+              [chartName]="'financial'" 
+              [symbolAndRate]="cryptoSymbolAndRate"
+              (toggleSpinner)="loadSpinner($event)">
+            </app-custom-charts>
+          </StackLayout>
+          <StackLayout [visibility]="!showSpinner ? 'visible' : 'collapsed'">
+              <app-spinner [toggleSpinner]="true"></app-spinner>
+          </StackLayout>
+            
+          <!-- <app-financial-chart [symbolAndRate]="cryptoSymbolAndRate"></app-financial-chart> -->
+        </StackLayout>
+      </StackLayout>
+      <ng-template #loading>
+        <app-spinner [toggleSpinner]="true"></app-spinner>
+      </ng-template>
+    </StackLayout>
+    <StackLayout row="1" col="0" marginBottom="20">
+      <Label 
+        [text]="chartLengthText" 
+        textWrap="true"
+        paddingLeft="20"
+        class="font-color h-align-left textsize-sm-md">
+      </Label>
+    </StackLayout>
+  </GridLayout>
+</StackLayout>

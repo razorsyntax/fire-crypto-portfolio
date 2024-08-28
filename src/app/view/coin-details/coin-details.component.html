@@ -1,0 +1,69 @@
+<app-gradient-background>
+  <StackLayout>
+    <GridLayout>
+      <GridLayout>
+        <StackLayout height="100%" width="100%">
+          <ScrollView height="100%" width="100%">
+            <StackLayout>
+              <GridLayout rows="*,auto,auto" width="100%">
+                <StackLayout row="0">
+                  <GridLayout rows="auto,*,*,*" columns="*">
+                    <!-- Top Box -->
+                    <StackLayout row="0" col="0">
+                      <app-coin-details-portfolio-box 
+                          [headerObj]="portfolioBox" 
+                          [inPortfolio]="inPortfolio" 
+                          [inWatchlist]="inWatchlist"
+                          (portfolioEvent)="portfolioIconPressed($event)" 
+                          (watchlistEvent)="toggleWatchlist($event)"
+                          (viewTransactionsEvent)="navigateToTransactions($event)">
+                      </app-coin-details-portfolio-box>
+                    </StackLayout>
+                    <!-- Metrics Box -->
+                    <StackLayout row="1" col="0">
+                      <StackLayout class="default-background metric-box">
+                        <!-- Chart Box -->
+                        <StackLayout>
+                          <app-coin-details-crypto-data 
+                            [cryptoSymbolAndRate]="cryptoSymbolAndRate"
+                            [coinData]="topBoxData">
+                          </app-coin-details-crypto-data>
+                        </StackLayout>
+                      </StackLayout>
+                    </StackLayout>
+                    <!-- Coin Details -->
+                    <StackLayout row="2" col="0">
+                        <app-coin-details-box [coinData]="topBoxData"></app-coin-details-box>
+                    </StackLayout>
+                    <StackLayout row="3" col="0" marginBottom="50">
+                        <app-coin-details-feed [coin]="coinId"></app-coin-details-feed>
+                    </StackLayout>
+                  </GridLayout>
+                </StackLayout>
+              </GridLayout>
+            </StackLayout>
+          </ScrollView>
+        </StackLayout>
+
+        <!-- ios:isUserInteractionEnabled="false" is used for allowing touch to be enabled on ios when absolutelayout covers elements -->
+        <AbsoluteLayout width="50" ios:height="80" android:height="80" class="v-align-bottom">
+          <!-- Close Coin Details Page -->
+          <StackLayout width="50" height="100%" class="v-align-bottom">
+            <GridLayout rows="*" columns="*">
+              <StackLayout row="0" col="0" height="70" class="v-align-bottom" paddingBottom="10" (tap)="close()">
+                <Label text="&#xf057;" class="fontawesome-solid textsize-hdr7 font-color center-bottom"></Label>
+              </StackLayout>
+            </GridLayout>
+          </StackLayout>
+        </AbsoluteLayout>
+      </GridLayout>
+
+      <app-simple-dialog [buttons]="dialogButtons" [toggleDialog]="dialogOpen" (buttonEvent)="dialogButtonEvent($event)">
+        <StackLayout>
+          <Label [text]="dialogBodyText" textWrap="true" color="#ffffff" class="h-align-center"></Label>
+        </StackLayout>
+      </app-simple-dialog>
+
+    </GridLayout>
+  </StackLayout>
+</app-gradient-background>

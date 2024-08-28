@@ -1,0 +1,7 @@
+<ng-container *ngTemplateOutlet="
+    templateRef;
+    context: {
+      $implicit: userPrefs$ | async
+    }
+  ">
+</ng-container>

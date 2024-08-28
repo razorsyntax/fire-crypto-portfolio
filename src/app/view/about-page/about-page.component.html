@@ -1,0 +1,24 @@
+<app-gradient-background>
+  <StackLayout margin="20" class="default-background" borderRadius="5" color="white">
+    <StackLayout marginTop="10">
+      <GridLayout rows="auto,*,auto" columns="*">
+        <StackLayout row="0" col="0">
+          <Label row="0" col="0" text="&#xF104;" marginLeft="0" paddingLeft="20" (tap)="backToSettings()" class="fontawesome textsize-huge h-align-left"></Label>
+        </StackLayout>
+        <Label row="0" col="1" [text]="titleText" class="textsize-lrg center-center" textWrap="false"></Label>
+        <StackLayout row="1" col="0" class="font-color textsize-sm" padding="20">
+          <ScrollView width="100%" height="100%">
+            <GridLayout rows="auto,auto,auto,auto,auto,*" columns="*">
+              <Label row="0" col="0" [text]="paragraph1" class="paragraph-section" textWrap="true"></Label>
+              <Label row="1" col="0" [text]="paragraph2" class="paragraph-section" textWrap="true"></Label>
+              <Label row="2" col="0" [text]="paragraph3" class="paragraph-section" textWrap="true"></Label>
+              <Label row="3" col="0" [text]="paragraph4" class="paragraph-section center-bottom" textWrap="true"></Label>
+              <Label row="4" col="0" [text]="paragraph5" class="paragraph-section center-bottom" textWrap="true"></Label>
+              <Image row="5" col="0" src="~/images/anlogo.png" width="50%" class="center-center" marginTop="20"></Image>
+            </GridLayout>
+          </ScrollView>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</app-gradient-background>

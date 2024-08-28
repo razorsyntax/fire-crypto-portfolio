@@ -1,0 +1,11 @@
+
+    <StackLayout class="crypto-list-item default-background market-item">
+        <GridLayout columns="auto,*,auto" rows="auto,auto" class="list-group-item" padding="8">
+            <Label visibility="collapsed" [text]="listItem?.id"></Label>
+            <Image row="0" col="0" [src]="listItem?.crypto_icon" rowSpan="2" class="left-text" height="50"></Image>
+            <Label row="0" col="1" [text]="listItem?.name" class="crypto-name left-text textfont-light crypto-name-text"></Label>
+            <Label row="1" col="1" [text]="listItem?.rank"  class="crypto-rank left-text textfont-light crypto-rank-text"></Label>
+            <Label row="0" col="2" [text]="listItem?.price | customcurrency:listItem?.defaultcurrency" class="crypto-price right-text textfont-light crypto-price-text" textWrap="true"></Label>
+            <Label row="1" col="2" [text]="listItem?.percent_change_24h + '%'" [class]="listItem?.percent_color + ' text-right textsize-reg percent-text'"></Label>
+        </GridLayout>
+    </StackLayout>

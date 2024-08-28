@@ -1,0 +1,5 @@
+<GridLayout rows="*,*" columns="*">
+  <Label row="0" col="0" [text]="description" textWrap="true" margin="10"></Label>
+  <Label row="1" col="0" [text]="showText" (tap)="toggleDescription($event)" class="h-align-right" textWrap="true" ios:fontSize="16" 
+    marginRight="10" marginLeft="10" marginBottom="10" color="#e4e4e4"></Label>
+</GridLayout>

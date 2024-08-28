@@ -1,0 +1,90 @@
+<app-gradient-background>
+    <GridLayout>
+        <StackLayout margin="20" class="default-background" borderRadius="5" color="white">
+            <StackLayout marginTop="10" marginBottom="20" marginRight="20" marginLeft="20">
+                <GridLayout rows="auto,*" columns="*">
+                    <StackLayout row="0" col="0" (tap)="closeSettings()">
+                        <Label row="0" col="0" text="&#xF104;" marginLeft="0"
+                            class="fontawesome textsize-huge h-align-left"></Label>
+                    </StackLayout>
+                    <Label row="0" col="1" [text]="titleText" class="textsize-lrg center-center"
+                        textWrap="false"></Label>
+                    <StackLayout row="1" col="0" height="100%">
+                        <GridLayout rows="auto,auto,auto" columns="*,*" borderBottomWidth="1"
+                            borderBottomColor="#c4c4c4" marginBottom="5">
+                            <Label row="0" col="0" [text]="defaultCurrencyText"
+                                class="textsize-reg v-align-center" textWrap="true"></Label>
+                            <Label row="0" col="1" [text]="userCurrency" (tap)="defaultCurrencySelection($event)"
+                                paddingRight="12" class="m-15 fontawesome textsize-reg h-align-right"
+                                textWrap="true"></Label>
+                        </GridLayout>
+                        <StackLayout borderBottomWidth="1" borderBottomColor="#c4c4c4" marginBottom="10">
+                            <GridLayout rows="auto" columns="*,*">
+                                <StackLayout row="0" col="0" class="textsize-reg left-center" width="100%">
+                                    <Label [text]="enableAuthenticationText"
+                                        textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout row="0" col="1" class="h-align-right" width="90">
+                                    <Switch class="m-15" checked="false" isEnabled="false"
+                                        (checkedChange)="toggleAuthentication($event)" row="0" col="1"></Switch>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                        <StackLayout borderBottomWidth="1" borderBottomColor="#c4c4c4" marginBottom="10">
+                            <GridLayout rows="auto" columns="*,*">
+                                <StackLayout row="0" col="0" class="textsize-reg left-center" width="100%">
+                                    <Label [text]="resetPortfolioText"
+                                        textWrap="true"></Label>
+                                </StackLayout>
+                                <StackLayout row="0" col="1" class="h-align-right" width="90">
+                                    <Label text="&#xf011;" class="m-15 h-align-center textsize-lrg fontawesome"
+                                        textWrap="true" (tap)="resetPortfolio()"></Label>
+                                </StackLayout>
+                            </GridLayout>
+                        </StackLayout>
+                        <StackLayout height="100%">
+                            <ScrollView height="100%" width="100%">
+                                <GridLayout rows="auto,auto,auto,auto,auto" columns="*">
+                                    <Label row="0" col="0" [text]="acknowledgementsText"
+                                        (tap)="openPage('licensesandacknowledgements')"
+                                        class="textsize-reg h-align-center" textWrap="true" height="50"
+                                        marginTop="10"></Label>
+                                    <Label row="1" col="0" [text]="termsAndConditionsText"
+                                        (tap)="openPage('termsandconditions')" class="textsize-reg h-align-center"
+                                        textWrap="true" height="50"></Label>
+                                    <Label row="2" col="0" [text]="privacyPolicyText"
+                                        (tap)="openPage('privacypolicy')" class="textsize-reg h-align-center"
+                                        textWrap="true" height="50"></Label>
+                                    <Label row="3" col="0" [text]="aboutText"
+                                        (tap)="openPage('aboutpage')" class="textsize-reg h-align-center"
+                                        textWrap="true" height="50"></Label>
+                                    <StackLayout row="4" col="0">
+                                        <GridLayout rows="auto" columns="*,*">
+                                            <StackLayout row="0" col="0" (tap)="navigate('TWITTER')">
+                                                <Label class="fontawesome textsize-hdr4 center-center text-blue"
+                                                    text="&#xf099;"></Label>
+                                            </StackLayout>
+                                            <StackLayout row="0" col="1" (tap)="navigate('TELEGRAM')">
+                                                <Label class="fontawesome textsize-hdr3 center-center text-blue"
+                                                    text="&#xf1d8;"></Label>
+                                            </StackLayout>
+                                        </GridLayout>
+                                    </StackLayout>
+                                </GridLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </StackLayout>
+        <FilterableListpicker #myfilter blur="dark" [hintText]="hintText" [source]="defaultCurrencyItems"
+            (canceled)="cancelFilterableList($event)" (itemTapped)="itemTapped($event)">
+        </FilterableListpicker>
+        <app-simple-dialog [buttons]="dialogButtons" [toggleDialog]="dialogOpen"
+            (buttonEvent)="dialogButtonEvent($event)">
+            <StackLayout>
+                <Label [text]="dialogBodyText" textWrap="true" color="#ffffff" class="h-align-center"></Label>
+            </StackLayout>
+        </app-simple-dialog>
+    </GridLayout>
+</app-gradient-background>

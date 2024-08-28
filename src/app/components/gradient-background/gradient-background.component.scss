@@ -1,0 +1,6 @@
+$orange:#e16806;
+$red:#d21e06;
+
+.background-gradient {
+    background: linear-gradient(to bottom, $orange, $red);
+}

@@ -1,0 +1,89 @@
+$white: #fff;
+$selected-blue: #3aa1e9;
+$unselected-grey: #525252;
+$bolder-background-color: #2a2424;
+$transparent: transparent;
+$plus-btn-color: #c4c4c4;
+$fab-btn-color: #ff4081;
+
+.font-color {
+    color: $white;
+}
+
+.fontsize-xxxl {
+    font-size: 23;
+}
+
+.in-watchlist {
+    color: $selected-blue;
+}
+
+.not-in-watchlist {
+    color: $unselected-grey;
+}
+
+.in-portfolio {
+    color: $selected-blue;
+}
+
+.not-in-portfolio {
+    color: $unselected-grey;
+}
+
+.bold-weight {
+    font-weight: bold;
+}
+
+.selected {
+    color: $white;
+}
+
+.unselected {
+    color: $unselected-grey;
+}
+
+.crypto-image {
+    background-color: $bolder-background-color;
+    border-bottom-left-radius: 5;
+    border-top-left-radius: 5;
+    padding-left: 5;
+    padding-right: 5;
+}
+
+.crypto-ticker-symbol-background {
+    background-color: $bolder-background-color;
+}
+
+.android :host .crypto-ticker-fontsize {
+    font-size: 16;
+}
+
+.ios :host .crypto-ticker-fontsize {
+    font-size: 15;
+}
+
+.show-plus-button {
+    color: $plus-btn-color;
+}
+
+.hide-plus-button {
+    color: $transparent;
+}
+
+.fab-button {
+    background-color: $fab-btn-color;
+    height: 70;
+    horizontal-align: center;
+    margin: 15;
+    vertical-align: bottom;
+    width: 70; /// this is required on iOS - Android does not require width so you might need to adjust styles
+}
+
+
+.android-meta-text {
+    font-size: 16;
+}
+
+.ios-meta-text {
+    font-size: 14;
+}

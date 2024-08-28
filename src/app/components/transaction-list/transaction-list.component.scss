@@ -1,0 +1,16 @@
+$default-background: #2a2424;
+$green:#3ee129;
+$red:#a82f27;
+$blue: #3aa1e9;
+
+.green-background {
+    background: linear-gradient(to right, $default-background, $default-background, $default-background, $green);
+}
+
+.red-background {
+    background: linear-gradient(to right, $red, $default-background, $default-background, $default-background);
+}
+
+.blue-background {
+    background: linear-gradient(to right, $default-background, $default-background, $blue, $default-background, $default-background);
+}

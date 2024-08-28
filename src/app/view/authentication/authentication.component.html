@@ -1,0 +1,30 @@
+<app-gradient-background>
+
+  <StackLayout class="default-background" margin="20" borderRadius="5">
+    <GridLayout rows="auto,auto,*" columns="*">
+      <StackLayout row="0" col="0" paddingLeft="10" paddingRight="10">
+        <GridLayout rows="auto,auto" columns="*,*">
+          <Label row="0" col="0" text="<" textWrap="true" class="font-color h-align-left" (tap)="goBack()"
+            fontSize="20"></Label>
+          <Label row="0" col="2" text="Next >" textWrap="true" class="font-color h-align-right" fontSize="20"></Label>
+        </GridLayout>
+      </StackLayout>
+
+      <StackLayout row="1" col="0" class="default-background" marginTop="20" marginBottom="15" borderRadius="5" height="70"
+        minWidth="20">
+        <StackLayout>
+          <Label row="0" col="2" [text]="asteriskText" textWrap="false" fontSize="32" class="font-color h-align-center" paddingRight="10"
+            paddingLeft="10"></Label>
+        </StackLayout>
+        <StackLayout>
+          <Label row="1" col="1" [text]="instructionPinText" textWrap="true" class="font-color h-align-center" fontSize="20"></Label>
+        </StackLayout>
+      </StackLayout>
+
+      <StackLayout row="2" col="0" class="h-align-center">
+        <app-keypad (buttonPress)="onPinTap($event)"></app-keypad>
+      </StackLayout>
+    </GridLayout>
+
+  </StackLayout>
+</app-gradient-background>

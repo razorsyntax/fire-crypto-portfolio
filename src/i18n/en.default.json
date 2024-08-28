@@ -1,0 +1,117 @@
+{
+    "app.name": "Fire",
+    "ios.info.plist": {
+      "NSLocationWhenInUseUsageDescription": "This will be added to InfoPlist.strings"
+    },
+
+    "@@ButtonText_Ok": "Ok",
+    "@@ButtonText_Cancel": "Cancel",
+
+    "@@PortfolioListComponent_DefaultText": "Create a new Portfolio!",
+
+    "@@WatchlistListComponent_DefaultText": "Add to Watchlist",
+
+    "@@SearchFilterComponent_DefaultText": "Search for a cryptocurrency",
+
+    "@@CoinDetailsPortfolioBoxComponent_NotInPortfolio" : "Not in Portfolio",
+    "@@CoinDetailsPortfolioBoxComponent_YourPortfolio": "Holdings: ",
+
+    "@@CoinDetailsComponent_AddToPortfolio": "Add to Portfolio",
+    "@@CoinDetailsComponent_AddTransaction": "Add a Transaction",
+    "@@CoinDetailsComponent_RemoveFromPortfolio": "Remove from Portfolio",
+    "@@CoinDetailsComponent_Ok": "Ok",
+    "@@CoinDetailsComponent_Cancel": "Cancel",
+    "@@CoinDetailsComponent_DialogBodyText": "Are you sure? This action is irreversible",
+    "@@CoinDetailsComponent_RemovedFromPortfolio": "removed from portfolio",
+    "@@CoinDetailsComponent_RemovedFromWatchlist": "removed from watchlist",
+    "@@CoinDetailsComponent_AddedToWatchlist": "added to watchlist",
+    "@@CoinDetailsComponent_ErrorSavingToWatchlist": "Error saving to Watchlist",
+
+    "@@SettingsComponent_TitleText": "Settings",
+    "@@SettingsComponent_DefaultCurrencyText": "Default Currency",
+    "@@SettingsComponent_EnableAuthentication": "Authentication (coming soon)",
+    "@@SettingsComponent_ResetPortfolioText": "Reset Everything",
+
+    "@@SettingsComponent_Acknowledgements": "Acknowledgements",
+    "@@SettingsComponent_Terms&Conditions": "Terms & Conditions",
+    "@@SettingsComponent_PrivacyPolicy": "Privacy Policy",
+    "@@SettingsComponent_About": "About",
+    "@@SettingsComponent_DialogHeaderText": "Are you sure? This action is irreversible",
+
+    "@@CoinDetailsTopBoxComponent_Price": "Price",
+    "@@CoinDetailsTopBoxComponent_Supply": "Supply",
+    "@@CoinDetailsTopBoxComponent_MarketCap": "M. Cap",
+    "@@CoinDetailsTopBoxComponent_24hrVol": "24hr Vol",
+    "@@CoinDetailsTopBoxComponent_NoPriceData": "No Price Data",
+    "@@CoinDetailsTopBoxComponent_24HrChange": "Last 24hrs",
+    "@@CoinDetailsTopBoxComponent_Stats": "Stats",
+
+    "@@MarketcapHeaderComponent_MarketCap": "Market Cap",
+    "@@MarketcapHeaderComponent_24hrVol": "24hr Vol",
+    "@@MarketcapHeaderComponent_Dominance": "BTC Dom",
+
+    "@@CoinDetailsComponent_ChartLength": "Last 30 Days",
+
+    "@@TransactionListcomponent_PlaceholderText": "Add this to your Portfolio",
+    "@@TransactionListcomponent_EditTransaction": "Edit Transaction",
+    "@@TransactionListcomponent_RemoveTransaction": "Remove Transaction",
+    "@@TransactionListcomponent_RemoveFromPortfolio": "Remove from Portfolio",
+    "@@TransactionListcomponent_Ok": "Ok",
+    "@@TransactionListcomponent_Cancel": "Cancel",
+    "@@TransactionListcomponent_DialogHeaderText": "Are you sure? This action is irreversible",
+    "@@TransactionListcomponent_RemovedFromPortfolio": "removed from portfolio",
+    "@@TransactionListcomponent_TransactionRemoved": "Transaction successfully removed.",
+    "@@TransactionListcomponent_AddaTransaction": "Add a Transaction",
+
+    "@@PortfolioFieldsComponent_Amount": "amount",
+    "@@PortfolioFieldsComponent_Buy": "Buy",
+    "@@PortfolioFieldsComponent_Transfer": "Transfer",
+    "@@PortfolioFieldsComponent_Sell": "Sell",
+    "@@PortfolioFieldsComponent_AdvancedOptional": "Advanced (optional)",
+    "@@PortfolioFieldsComponent_CloseAdvanced": "Close Advanced",
+    "@@PortfolioFieldsComponent_ObtainedHint": "obtained",
+    "@@PortfolioFieldsComponent_ObtainedHintReleased": "released",
+    "@@PortfolioFieldsComponent_ExchangeHint": "exchange",
+    "@@PortfolioFieldsComponent_TradingPairHint": "trading pair",
+    "@@PortfolioFieldsComponent_TransferFrom": "transfer from",
+    "@@PortfolioFieldsComponent_TransferTo": "transfer to",
+
+    "@@PortfolioFormComponent_ListPickerHint": "Type to Filter...",
+    "@@PortfolioFormComponent_TimeAddedValidation_Message": "Please enter a time.",
+    "@@PortfolioFormComponent_AmountValidation_Message": "Please enter an amount.",
+    "@@PortfolioFormComponent_CoinValidation_Message": "Please select a Cryptocurrency.",
+    "@@PortfolioFormComponent_ExchangeValidation_Message": "Please select an exchange",
+    "@@PortfolioFormComponent_TransferredFromValidation_Message": "Please select transfer from.",
+    "@@PortfolioFormComponent_TransferredToValidation_Message": "Please select transfer to.",
+    "@@PortfolioFormComponent_NegativeAmountValidation_Message": "Negative amounts are not allowed.",
+    "@@PortfolioFormComponent_SuccessfullyUpdated_Message": "Successfully Updated!",
+    "@@PortfolioFormComponent_SelectAnExchangeToast": "Select an Exchange",
+
+    "@@LicensesAndAcknowledgementComponent_TitleText": "Acknowledgements",
+    "@@LicensesAndAcknowledgementComponent_CryptoData": "Cryptocurrency Data",
+    "@@LicensesAndAcknowledgementComponent_CryptoIcons": "Cryptocurrency Icons by",
+    "@@LicensesAndAcknowledgementComponent_Fonts": "Fonts",
+
+    "@@TransactionComponent_Title": "Transactions",
+
+    "@@LoadingIndicatorProvider_Message": "Loading...",
+
+    "@@WelcomeComponent_Slide1_Title": "FIRE Crypto Portfolio",
+    "@@WelcomeComponent_Slide1_Subtitle": "The easiest way to Track & Manage all your favorite coins!",
+    "@@WelcomeComponent_Slide2_Title": "Secure & Reliable",
+    "@@WelcomeComponent_Slide2_Subtitle": "Your data stays on your phone. We don't collect your data.",
+    "@@WelcomeComponent_Slide3_Title": "We love Crypto!",
+    "@@WelcomeComponent_Slide3_Subtitle": "New coins added almost every day!",
+    "@@WelcomeComponent_GetStarted_Button": "Get Started!",
+
+    "@@AppSync_OptionalUpdateMessage": "A new update is available!",
+    "@@AppSync_UpdateTitle": "Please restart the Fire.",
+    "@@AppSync_MandatoryUpdateMessage": "Please Restart Fire for Urgent Update",
+    "@@AppSync_OptionalIgnoreButtonLabel": "Later",
+    "@@AppSync_MandatoryContinueButtonLabel_iOS": "Exit Now",
+    "@@AppSync_MandatoryContinueButtonLabel_Android": "Restart Now"
+
+
+
+
+  }

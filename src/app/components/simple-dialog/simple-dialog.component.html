@@ -1,0 +1,14 @@
+<AbsoluteLayout ios:isUserInteractionEnabled="true" class="dialog-wrapper center-center" [visibility]="toggleDialog ? 'visible' : 'collapsed'">
+    <StackLayout class="dialog">
+        <StackLayout class="body-content">
+            <ng-content></ng-content>
+        </StackLayout>
+        <StackLayout class="button-content">
+            <StackLayout *ngFor="let btn of buttons">
+                <Button class="btn {{ btn.buttonclass }}" [text]="btn.buttontext" [visibility]="btn.buttonvisibility ? 'visible' : 'collapsed'"
+                    (tap)="btnEvent(btn)">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</AbsoluteLayout>

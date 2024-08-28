@@ -1,0 +1,22 @@
+<app-gradient-background>
+  <StackLayout margin="20" class="default-background" borderRadius="5" color="white">
+    <StackLayout marginTop="10">
+      <GridLayout rows="auto,*" columns="*" height="50">
+        <StackLayout row="0" col="0">
+          <Label row="0" col="0" text="&#xF104;" marginLeft="0" paddingLeft="20" (tap)="backToSettings()" class="fontawesome textsize-huge h-align-left"></Label>
+        </StackLayout>
+        <Label row="0" col="1" [text]="titleText" class="textsize-med center-center" textWrap="true"></Label>
+      </GridLayout>
+      <StackLayout height="100%" width="100%">
+        <ScrollView height="100%" width="100%">
+          <GridLayout [rows]="rowString" columns="*">
+            <StackLayout *ngFor="let section of sectionItems; let i = index" [row]="i" col="0">
+              <app-section-component [subSectionItems]="section"></app-section-component>
+              <StackLayout *ngIf="(i+1) !== sectionItems.length" row="1" col="0" class="center-center divider"></StackLayout>
+            </StackLayout>
+          </GridLayout>
+        </ScrollView>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+</app-gradient-background>

@@ -1,0 +1,43 @@
+$grey1: #c4c4c4;
+$white: #fff;
+$placeholder-grey:#9d9999;
+$icon-background: #333;
+
+$orange:#e16806;
+$red:#d21e06;
+
+.hidden-element {
+    visibility: collapsed;
+}
+
+.font-size-reg {
+    font-size: 18;
+}
+
+.font-size-lrg {
+    font-size: 36;
+}
+
+.icon-background {
+    background-color: $icon-background;
+}
+
+.placeholder-color {
+    color: $placeholder-grey;
+}
+
+.selected {
+    color: $white;
+}
+
+.unselected {
+    color: $placeholder-grey;
+}
+
+.padding-btn {
+    padding-bottom: 10;
+}
+
+.lintest {
+    background: linear-gradient(to bottom, $orange, $red);
+}

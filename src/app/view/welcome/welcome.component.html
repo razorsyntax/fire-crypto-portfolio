@@ -1,0 +1,91 @@
+<GridLayout backgroundColor="#342c2d" margin="20" borderRadius="10">
+    <StackLayout width="100%">
+        <GridLayout row="2" rows="*, auto">
+            <GridLayout row="0" rows="*" columns="auto, auto, *" class="m-b-20">
+                <Carousel class="carousel" 
+                        pageChanged="myChangeEvent" 
+                        pageTapped="mySelectedEvent"
+                        indicatorColor="#ffffff" 
+                        finite="true" 
+                        bounce="true" 
+                        showIndicator="true" 
+                        verticalAlignment="top"
+                        android:indicatorOffset="0,25"
+                        ios:indicatorOffset="0,10">
+                    <CarouselItem id="slide1" verticalAlignment="middle">
+                        <GridLayout row="0" rows="*, 2*, *">
+                            <GridLayout width="56%" row="0" horizontalAlignment="center" verticalAlignment="center">
+                                <Label class="font-color textsize-lrg" [text]="slide1"
+                                    textWrap="true" marginTop="20" marginBottom="20"></Label>
+                            </GridLayout>
+
+                            <GridLayout backgroundColor="#ffffff" class="carousel-item-circle" row="1"
+                                horizontalAlignment="center" verticalAlignment="center">
+                                <StackLayout height="100%" width="100%" backgroundColor="#ffffff">
+                                    <Image src="~/images/coinintro.png" width="100%" height="100%"></Image>
+                                </StackLayout>
+                            </GridLayout>
+
+                            <GridLayout width="49%" row="2" horizontalAlignment="center" verticalAlignment="center">
+                                <Label class="carousel-item-desc" color="#ffffff"
+                                    [text]="slide1_sub" textWrap="true">
+                                </Label>
+                            </GridLayout>
+                        </GridLayout>
+                    </CarouselItem>
+                    <CarouselItem id="slide2" verticalAlignment="middle">
+                        <GridLayout row="0" rows="*, 2*, *">
+                            <GridLayout width="56%" row="0" horizontalAlignment="center" verticalAlignment="center">
+                                <Label class="font-color textsize-hdr6" color="#ffffff" [text]="slide2"
+                                    textWrap="true"></Label>
+                            </GridLayout>
+
+                            <GridLayout class="carousel-item-circle" row="1" horizontalAlignment="center"
+                                verticalAlignment="center">
+                                <StackLayout height="100%" width="100%" backgroundColor="#ffffff">
+                                    <Image src="~/images/page2image.png" width="100%" height="100%"></Image>
+                                </StackLayout>
+                            </GridLayout>
+
+                            <GridLayout width="49%" row="2" horizontalAlignment="center" verticalAlignment="center">
+                                <StackLayout>
+                                    <Label class="opensans-regular carousel-item-desc" color="#ffffff"
+                                        [text]="slide2_sub"
+                                        textWrap="true">
+                                    </Label>
+                                </StackLayout>
+
+                            </GridLayout>
+                        </GridLayout>
+                    </CarouselItem>
+                    <CarouselItem id="slide3" verticalAlignment="middle">
+                        <GridLayout row="0" rows="*, 2*, *">
+                            <GridLayout width="100%" row="0" horizontalAlignment="center" verticalAlignment="center">
+                                <Label class="font-color textsize-hdr6 center-center" [text]="slide3"
+                                    color="#ffffff" textWrap="true"></Label>
+                            </GridLayout>
+
+                            <GridLayout class="carousel-item-circle" row="1" horizontalAlignment="center"
+                                verticalAlignment="center">
+                                <StackLayout height="100%" width="100%" backgroundColor="#ffffff">
+                                    <Image src="~/images/page3meme.png" width="100%" height="100%"></Image>
+                                </StackLayout>
+                            </GridLayout>
+
+                            <GridLayout width="49%" row="2" horizontalAlignment="center" verticalAlignment="center">
+                                <Label color="#ffffff" class="opensans-regular carousel-item-desc"
+                                    [text]="slide3_sub" textWrap="true">
+                                </Label>
+                            </GridLayout>
+                        </GridLayout>
+                    </CarouselItem>
+                </Carousel>
+            </GridLayout>
+            <GridLayout row="1" rows="auto" verticalAlignment="bottom" class="m-t-10">
+                <Button backgroundColor="white" width="100%" borderRadius="5" color="#342c2d" [text]="getStartedButtonText"
+                    textWrap="false" class="opensans-semi-bold skip-intro" (tap)="skipIntro()" marginBottom="20">
+                </Button>
+            </GridLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

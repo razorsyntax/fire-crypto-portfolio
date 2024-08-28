@@ -1,0 +1,38 @@
+<app-gradient-background>
+  <GridLayout rows="*" columns="*" margin="20" class="default-background">
+    <StackLayout>
+      <GridLayout rows="auto,auto,*" columns="*">
+        <StackLayout row="0" col="0">
+          <Label 
+              [text]="titleText" 
+              class="center-center font-color textsize-hdr3" 
+              textWrap="true" 
+              margin="10">
+          </Label>
+        </StackLayout>
+        <StackLayout row="1" col="0" 
+            class="center-center" 
+            height="15%">
+          <Image [src]="imagepath"></Image>
+        </StackLayout>
+        <StackLayout row="2" col="0" height="100%" borderRadius="5" paddingBottom="35">
+          <app-transaction-list 
+              [transactionItems]="transactionItems"
+              (removeTransactionEvent)="transactionRemoved($event)">
+          </app-transaction-list>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+     <!-- ios:isUserInteractionEnabled="false" is used for allowing touch to be enabled on ios when absolutelayout covers elements -->
+     <AbsoluteLayout width="50" ios:height="80" android:height="80" class="v-align-bottom">
+        <!-- Close Coin Details Page -->
+        <StackLayout width="50" height="100%" class="v-align-bottom">
+          <GridLayout rows="*" columns="*">
+            <StackLayout row="0" col="0" height="70" class="v-align-bottom" paddingBottom="10" (tap)="close()">
+              <Label text="&#xf057;" class="fontawesome-solid textsize-hdr7 font-color center-bottom"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </AbsoluteLayout>
+  </GridLayout>
+</app-gradient-background>

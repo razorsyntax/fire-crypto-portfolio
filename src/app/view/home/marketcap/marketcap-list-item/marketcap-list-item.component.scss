@@ -1,0 +1,59 @@
+$white: #fff;
+$black: #000;
+$red-color: #a82f27;
+$green-color: #3ee129;
+$background-color: #333;
+
+.android :host .crypto-name-text {
+    font-size: 19;
+}
+
+.ios :host .crypto-name-text {
+    font-size: 17;
+}
+
+.android :host .crypto-rank-text {
+    font-size: 19;
+}
+
+.ios :host .crypto-rank-text {
+    font-size: 17;
+}
+
+.android :host .crypto-price-text {
+    font-size: 19;
+}
+
+.ios :host .crypto-price-text {
+    font-size: 17;
+}
+
+.crypto-rank {
+    color: $white;
+    padding-left: 10;
+}
+
+.crypto-name {
+    color: $white;
+    padding-left: 10;
+}
+
+.crypto-price {
+    color: $white;
+}
+
+.percent-text {
+    font-weight: bold;
+}
+
+.crypto-list-item {
+    width: 100%;
+}
+
+.market-item {
+    border-radius: 5;
+    margin-bottom: 8;
+    margin-top: 8;
+    orientation: horizontal;
+    width: auto;
+}

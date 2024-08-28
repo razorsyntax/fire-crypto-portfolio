@@ -1,0 +1,18 @@
+<StackLayout borderTopWidth="1" borderBottomWidth="1" [borderBottomColor]="borders.bottomborder" [borderTopColor]="borders.topborder">
+  <GridLayout rows="auto" [columns]="gridColumns" backgroundColor="#342c2d">
+    <StackLayout
+      id="TabLayout"
+      *ngFor="let tabItem of tabCharArr, let i = index;" 
+      row="0" 
+      [col]="i" 
+      rowSpan="2"
+      (tap)="ontabSelection(tabItem, i)" >
+        <Label #tab{{tabItem?.tabId}}
+          [text]="tabItem?.charCode" 
+          [id]="tabItem?.tabId"
+          margin="5"
+          class="{{ tabItem?.charClass }} textsize-hdr7 text-center center-center">
+      </Label>
+    </StackLayout>
+  </GridLayout>
+</StackLayout>

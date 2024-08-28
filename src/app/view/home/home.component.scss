@@ -1,0 +1,18 @@
+$selected: #fff;
+$unselected: #181818;
+
+.fontsize-lg {
+    font-size: 32;
+}
+
+.fontsize-xxlg {
+    font-size: 42;
+}
+
+.selected {
+    color: $selected;
+}
+
+.unselected {
+    color: $unselected;
+}

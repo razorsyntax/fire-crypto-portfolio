@@ -1,0 +1,10 @@
+<StackLayout class="center-center">
+  <GridLayout rows="auto,auto" columns="auto">
+    <Label row="0" col="0" textWrap="true" [text]="topText" class="center-center {{ topTextClass }}"></Label>
+    <Label row="1" col="0" android:fontSize="15" io:fontSize="15" class="center-center" textWrap="true">
+      <FormattedString>
+        <Span [text]="bottomText" [color]="colour" class="{{ bottomTextClass }}"></Span>
+      </FormattedString>
+    </Label>
+  </GridLayout>
+</StackLayout>

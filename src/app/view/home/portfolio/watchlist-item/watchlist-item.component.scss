@@ -1,0 +1,51 @@
+$white: #fff;
+$background-color: #4b4b4b;
+
+.crypto-symbol {
+    color: $white;
+    font-size: 14;
+    padding-left: 10;
+}
+
+.crypto-name {
+    color: $white;
+    font-size: 20;
+    padding-left: 10;
+}
+
+.crypto-price {
+    color: $white;
+    font-size: 19;
+}
+
+.header-list-item {
+    background-color: $background-color;
+    border-radius: 5;
+    margin: 5;
+    padding: 10;
+}
+
+.list-item {
+    background-color: $background-color;
+    border-radius: 3;
+}
+
+.crypto-market-header {
+    background-color: $background-color;
+}
+
+.title-font-size {
+    font-size: 25;
+}
+
+.percent-text {
+    font-weight: bold;
+}
+
+.crypto-list-item {
+    width: 100%;
+}
+
+.font-size-reg {
+    font-size: 18;
+}

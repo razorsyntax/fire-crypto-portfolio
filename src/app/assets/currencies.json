@@ -1,0 +1,142 @@
+{
+    "currencies": [
+        {
+            "abbr": "AUD",
+            "sym": "$"
+        },
+        {
+            "abbr": "BRL",
+            "sym": "R$"
+        },
+        {
+            "abbr": "CAD",
+            "sym": "C$",
+            "altsym": "$"
+        },
+        {
+            "abbr": "CHF",
+            "sym": "SFr",
+            "altsym": "CHf"
+        },
+        {
+            "abbr": "CLP",
+            "sym": "$"
+        },
+        {
+            "abbr": "CNY",
+            "sym": "¥"
+        },
+        {
+            "abbr": "CZK",
+            "sym": "Kč"
+        },
+        {
+            "abbr": "DKK",
+            "sym": "Kr"
+        },
+        {
+            "abbr": "EUR",
+            "sym": "€"
+        },
+        {
+            "abbr": "GBP",
+            "sym": "£"
+        },
+        {
+            "abbr": "HKD",
+            "sym": "HK$"
+        },
+        {
+            "abbr": "HUF",
+            "sym": "Ft"
+        },
+        {
+            "abbr": "IDR",
+            "sym": "Rp"
+        },
+        {
+            "abbr": "ILS",
+            "sym": "₪"
+        },
+        {
+            "abbr": "INR",
+            "sym": "₹"
+        },
+        {
+            "abbr": "JPY",
+            "sym": "¥",
+            "altsym": "円"
+        },
+        {
+            "abbr": "KRW",
+            "sym": "₩"
+        },
+        {
+            "abbr": "MXN",
+            "sym": "$",
+            "altsym": "Mex$"
+        },
+        {
+            "abbr": "MYR",
+            "sym": "RM"
+        },
+        {
+            "abbr": "NOK",
+            "sym": "kr"
+        },
+        {
+            "abbr": "NZD",
+            "sym": "$"
+        },
+        {
+            "abbr": "PHP",
+            "sym": "₱"
+        },
+        {
+            "abbr": "PKR",
+            "sym": "₨"
+        },
+        {
+            "abbr": "PLN",
+            "sym": "zł"
+        },
+        {
+            "abbr": "RUB",
+            "sym": "₽",
+            "altsym": "руб"
+        },
+        {
+            "abbr": "SEK",
+            "sym": "kr"
+        },
+        {
+            "abbr": "SGD",
+            "sym": "S$",
+            "altsym": "$"
+        },
+        {
+            "abbr": "THB",
+            "sym": "฿"
+        },
+        {
+            "abbr": "TRY",
+            "sym": "₺"
+        },
+        {
+            "abbr": "TWD",
+            "sym": "NT$",
+            "altsym": "$"
+        },
+        {
+            "abbr": "ZAR",
+            "sym": "R"
+        }
+    ],
+    "cryptocurrencies": [
+        "BTC",
+        "ETH",
+        "XRP",
+        "LTC",
+        "BCH"
+    ]
+}

@@ -1,0 +1,37 @@
+<GridLayout rows="55,*" columns="*">
+
+  <StackLayout row="0" col="0" backgroundColor="#342c2d" borderColor="white" borderBottomWidth="1">
+      <GridLayout rows="auto" columns="*,*" color="white" marginTop="20">
+        <Label row="0" col="0" text="Coin Discovery" class="textsize-med-reg" marginLeft="5" textWrap="true"></Label>
+        <StackLayout row="0" col="1" (tap)="searchTags()" class="h-align-right" marginRight="10">
+            <Label text="&#xF002;" textWrap="true" class="fontawesome font-color" android:fontSize="24" ios:fontSize="20" marginTop="3"></Label>
+        </StackLayout>
+      </GridLayout>
+  </StackLayout>
+
+  <StackLayout row="1" col="0">
+    <StackLayout [visibility]="!isloading ? 'visible' : 'collapsed'">
+      <RadListView 
+          height="100%" 
+          [items]="tags$ | async" 
+          pullToRefresh="false" 
+          scrollDirection="Vertical">
+        <ng-template tkListItemTemplate let-item="item">
+          <StackLayout marginBottom="4" marginTop="4" backgroundColor="#342c2d">
+            <app-coin-discovery-list-item 
+              (tagChanged)="reloadDiscovery($event)"
+              [coinList]="item?.customtags" 
+              [tagName]="item">
+            </app-coin-discovery-list-item>
+          </StackLayout>
+        </ng-template>
+      </RadListView>        
+    </StackLayout>
+
+    <StackLayout [visibility]="isloading ? 'visible' : 'collapsed'">
+      <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true"></ActivityIndicator>
+    </StackLayout>
+
+  </StackLayout>
+
+</GridLayout>

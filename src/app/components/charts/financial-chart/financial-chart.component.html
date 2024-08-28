@@ -1,0 +1,72 @@
+<StackLayout borderRadius="3" minHeight="200">
+  <StackLayout [visibility]="!loadSpinner ? 'visible' : 'collapsed'">
+    <StackLayout [visibility]="hasData ? 'visible' : 'collapsed'">
+      <GridLayout rows="*">
+          <RadCartesianChart row="0"
+                class="default-background"
+                ios:paddingBottom="10">
+            <CategoricalAxis
+              lineColor="#f5f5f5"
+              labelTextColor="#f5f5f5"
+              lineThickness="1"
+              labelMargin="3"
+              majorTickInterval="10"
+              tkCartesianHorizontalAxis>
+            </CategoricalAxis>
+            <LinearAxis
+              lineColor="#f5f5f5" 
+              labelTextColor="#f5f5f5"
+              horizontalLocation="Right"
+              labelMargin="3"
+              [maximum]="max"
+              [minimum]="min"
+              lineThickness="1"
+              labelLayoutMode="Outer" 
+              tkCartesianVerticalAxis>
+            </LinearAxis>
+            <AreaSeries
+              tkCartesianSeries
+              seriesName="Area" 
+              showLabels="false"
+              [items]="ohlcSourceItems$ | async"
+              stackMode="Stack"
+              categoryProperty="Date" 
+              valueProperty="Amount" 
+              selectionMode="None">
+            </AreaSeries>
+            <RadCartesianChartGrid 
+              tkCartesianGrid 
+              horizontalLinesVisible="true" 
+              verticalLinesVisible="true" 
+              verticalStripLinesVisible="false"
+              horizontalStripLinesVisible="false" 
+              horizontalStrokeColor="#181818">
+            </RadCartesianChartGrid>
+            <Palette tkCartesianPalette seriesName="Area">
+              <PaletteEntry
+                  tkCartesianPaletteEntry 
+                  fillColor="#2a2424" 
+                  [strokeColor]="lineColor"
+                  android:strokeWidth="5"
+                  ios:strokeWidth="2">
+              </PaletteEntry>
+              <PaletteEntry 
+                  tkCartesianPaletteEntry 
+                  fillColor="#181818" 
+                  strokeColor="#181818" 
+                  strokeWidth="0">
+              </PaletteEntry>
+            </Palette>
+          </RadCartesianChart>
+      </GridLayout>
+    </StackLayout>
+
+    <StackLayout class="center-center" height="100%" [visibility]="!hasData ? 'visible' : 'collapsed'">
+      <Label text="No Chart Data Available" class="font-color textsize-reg-md" textWrap="true"></Label>
+    </StackLayout>
+
+  </StackLayout>
+    <StackLayout [visibility]="loadSpinner ? 'visible' : 'collapsed'">
+      <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true"></ActivityIndicator>
+    </StackLayout>
+</StackLayout>

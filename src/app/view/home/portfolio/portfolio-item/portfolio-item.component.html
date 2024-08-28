@@ -1,0 +1,36 @@
+<GridLayout (tap)="loadCoinDetailsPage(portfolioListItem)" columns="*" rows="auto,auto,auto" marginRight="6"
+    marginLeft="6" marginTop="10" marginBottom="10">
+    <StackLayout row="1" col="0" class="crypto-image-background"></StackLayout>
+    <StackLayout row="0" col="0" rowSpan="3">
+        <Image [src]="portfolioListItem?.crypto_icon" class="left-text crypto-image"></Image>
+    </StackLayout>
+    <StackLayout row="2" col="0" class="default-background bottom-border-radius data-information">
+        <GridLayout rows="auto,auto,*" columns="*" class="bottom-border-radius">
+            <!-- Total USD -->
+            <StackLayout row="0" col="0">
+                <!--[text]="transformCurrency(portfolioListItem)"-->
+                <Label
+                    [text]="portfolioListItem?.pricetotal | portfoliocurrency:portfolioListItem?.defaultcurrency"
+                    class="textfont-reg center-text price-total" textWrap="true">
+                </Label>
+            </StackLayout>
+
+            <!-- Total Holdings -->
+            <StackLayout row="1" col="0">
+                <Label [text]="portfolioListItem?.numcoins + ' ' + portfolioListItem?.symbol"
+                    class="textfont-light center-text textsize-sm" paddingBottom="5">
+                </Label>
+            </StackLayout>
+
+            <StackLayout row="2" col="0" class="bottom-border-radius">
+                <!-- Percent change -->
+                <Label 
+                    [text]="portfolioListItem?.percent_change_24h | custompercent"
+                    [class]="portfolioListItem?.percent_color + ' center-text font-color'" 
+                    borderBottomRightRadius="5"
+                    borderBottomLeftRadius="5" ios:padding="0">
+                </Label>
+            </StackLayout>
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

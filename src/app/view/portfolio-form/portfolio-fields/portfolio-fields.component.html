@@ -1,0 +1,105 @@
+<StackLayout (fieldUpdate)="formUpdate($event)">
+  <!-- Buy/Transfer/Sell Tabs -->
+  <app-tabs 
+      [tabCharArr]="tabs" 
+      (tabSelected)="tabWasSelected($event)" 
+      [tabFontSize]="'textsize-hdr3'" 
+      [borders]="tabBorders"
+      [setTab]="setSelectedTab">
+  </app-tabs>
+
+  <!-- amount -->
+  <StackLayout row="1" col="0" marginBottom="5" class="h-align-center">
+    <TextField required [hint]="amountHintText"
+        class="h-align-center center-text amount-field"
+        keyboardType="number"
+        [text]="amountText" 
+        (tap)="clearValidation()"
+        (textChange)="onTextChange($event)">
+    </TextField>
+  </StackLayout>
+  
+  <!-- Date/Time -->
+  <StackLayout>
+    <!-- Date/Time Icons-->
+    <StackLayout class="form" margin="5">
+      <GridLayout rows="auto" columns="*,*">
+        <!-- DatePicker Icon -->
+        <StackLayout row="0" col="0" (tap)="pickDate()">
+          <GridLayout rows="auto,auto" columns="*">
+            <Label row="0" col="0" text="&#xF073;" [color]="datePickerColor" class="label fontawesome center-text date-picker-icon"></Label>
+            <Label row="1" col="0" [text]="dateAddedText" textWrap="true" class="center-text center-center date-picker-label"></Label>
+          </GridLayout>
+        </StackLayout>
+
+        <!-- TimePicker Icon -->
+        <StackLayout row="0" col="1" (tap)="pickTime()">
+          <GridLayout rows="auto,auto" columns="*">
+            <Label row="0" col="0" text="&#xF017;" [color]="timePickerColor" class="label fontawesome center-text time-picker-icon"></Label>
+            <Label row="1" col="0" [text]="timeAddedText" textWrap="true" class="center-text center-center time-picker-label"></Label>
+          </GridLayout>
+        </StackLayout>
+
+      </GridLayout>
+    </StackLayout>
+    <StackLayout *ngIf="!transferTabSelected">
+      <StackLayout (tap)="toggleAdvanced()">
+        <Label [text]="showAdvancedText" class="advanced-label center-center" textWrap="true"></Label>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+
+  <!-- transfer fields -->
+  <StackLayout *ngIf="transferTabSelected">
+    <GridLayout rows="auto" columns="*,*" paddingBottom="10">
+      <!-- select transfer from -->
+      <StackLayout row="0" col="0">
+        <StackLayout borderBottomWidth="1" borderColor="#4b4b4b" class="margin-rl-ten" (tap)="advancedOption('transferredFrom')" padding="10">
+          <Label [text]="transferFromTextField" class="textsize-reg h-align-center {{ transferFromClass }}" textWrap="true"></Label>
+        </StackLayout>
+      </StackLayout>
+
+      <!--select transfer to -->
+      <StackLayout row="0" col="1" class="margin-rl-ten">
+        <StackLayout borderBottomWidth="1" borderColor="#4b4b4b" (tap)="advancedOption('transferredTo')" padding="10">
+          <Label [text]="transferToTextField" class="textsize-reg h-align-center {{ transferToClass }}" textWrap="true"></Label>
+        </StackLayout>
+      </StackLayout>
+    </GridLayout>
+  </StackLayout>
+
+  <!-- Advanced Options -->
+  <StackLayout *ngIf="!transferTabSelected" visibility="{{ showAdvancedForm ? 'visible' : 'hidden' }}">
+    <StackLayout>
+      <GridLayout rows="auto,auto" columns="*" paddingBottom="10">
+        <StackLayout row="0" col="0">
+          <GridLayout rows="auto" columns="*,*">
+            
+            <!-- select location obtained -->
+            <StackLayout row="0" col="0">
+              <StackLayout class="margin-rl-ten advanced-dropdown-styling h-align-center" width="150" (tap)="advancedOption('obtained')" padding="10">
+                <Label [text]="obtainedTextField" class="textsize-reg h-align-center {{ obtainedClass }}" textWrap="true"></Label>
+              </StackLayout>
+            </StackLayout>
+
+            <!-- select an exchange -->
+            <StackLayout row="0" col="1" visibility="{{ showExchangeAndTradingPairForms ? 'visible' : 'collapsed' }}">
+              <StackLayout class="margin-rl-ten advanced-dropdown-styling h-align-center" width="150" (tap)="advancedOption('exchange')" padding="10">
+                <Label [text]="exchangeTextField" class="textsize-reg h-align-center {{ exchangeClass }}" textWrap="true"></Label>
+              </StackLayout>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+
+        <!-- trading pair -->
+        <StackLayout row="1" col="0" rowSpan="2" visibility="{{ showExchangeAndTradingPairForms ? 'visible' : 'collapsed' }}"
+          class="margin-rl-ten" marginTop="10">
+          <StackLayout class="margin-rl-ten advanced-dropdown-styling h-align-center" width="150" (tap)="advancedOption('tradingpair')" padding="10">
+            <Label [text]="tradingPairTextField" class="textsize-reg h-align-center {{ tradingPairClass }}" textWrap="true"></Label>
+          </StackLayout>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+  
+</StackLayout>

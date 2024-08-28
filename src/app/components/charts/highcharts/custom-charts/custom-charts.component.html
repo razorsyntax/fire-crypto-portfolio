@@ -1,0 +1,5 @@
+<StackLayout width="100%" height="100%" (loaded)="onLoad($event)">
+    <StackLayout [visibility]="hasData ? 'visible' : 'collapsed'">
+        <Highcharts [options]="chartService$ | async" id="ChartContainer"></Highcharts>
+    </StackLayout>
+</StackLayout>

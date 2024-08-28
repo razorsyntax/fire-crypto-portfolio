@@ -1,0 +1,12 @@
+<app-gradient-background>
+  <GridLayout rows="50,*" columns="*">
+    <StackLayout row="0" col="0" backgroundColor="#342c2d" borderBottomWidth="1" borderBottomColor="white"
+      (tap)="navigateBack()">
+      <Label row="0" col="0" text="&#xF104;" color="white" marginLeft="5"
+        class="fontawesome textsize-huge h-align-left"></Label>
+    </StackLayout>
+    <StackLayout row="1" col="0">
+      <WebView height="100%" [src]="url"></WebView>
+    </StackLayout>
+  </GridLayout>
+</app-gradient-background>

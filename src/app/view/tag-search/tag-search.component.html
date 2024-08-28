@@ -1,0 +1,80 @@
+<app-gradient-background>
+  <StackLayout>
+    <StackLayout backgroundColor="#342c2d" height="50" borderBottomColor="white" borderBottomWidth="1">
+        <GridLayout rows="50" columns="20,*,*">
+            <StackLayout row="0" col="0" (tap)="backToHome()" marginTop="10">
+                <Label row="0" col="0" text="&#xF104;" color="white" marginLeft="5"
+                    class="fontawesome textsize-huge h-align-left"></Label>
+            </StackLayout>
+          <StackLayout row="0" col="1" marginTop="15">
+              <Label text="Coin Discovery" marginLeft="10" color="white" android:class="android-meta-text h-align-left" ios:class="ios-meta-text h-align-left"
+                fontSize="24" textWrap="true"></Label>
+          </StackLayout>
+          
+          <StackLayout row="0" col="2" marginTop="17" class="h-align-right" marginRight="10">
+              <Label [color]="tagColor" fontSize="24" text="&#xf02c;" (tap)="showTags($event)" class="fontawesome" marginTop="5" textWrap="true"></Label>
+          </StackLayout>
+      </GridLayout>
+    </StackLayout>
+
+      <StackLayout margin="20" backgroundColor="#342c2d" height="50%" *ngIf="showTagPanel" borderRadius="5">
+        <ScrollView orientation="vertical">
+          <GridLayout rows="*,*" columns="*" paddingLeft="16" paddingRight="16" paddingTop="8" paddingBottom="8">
+            <StackLayout row="0" col="0" marginLeft="5">
+              <Label text="Tags" color="white" android:class="android-meta-text" ios:class="ios-meta-text"
+                fontSize="24" textWrap="true"></Label>
+            </StackLayout>
+            <StackLayout row="1" col="0">
+                <app-chips [chipArr]="tags" (selectedChip)="tagSelected($event)"></app-chips>
+            </StackLayout>
+          </GridLayout>
+        </ScrollView>
+      </StackLayout>
+
+    <StackLayout margin="20">
+      <StackLayout borderRadius="5" backgroundColor="#342c2d">
+        <GridLayout rows="auto,auto,*" columns="*">
+          <StackLayout row="0" col="0" margin="10">
+            <Label [text]="tagName" color="white" android:class="android-meta-text" ios:class="ios-meta-text"
+              fontSize="24" textWrap="true"></Label>
+          </StackLayout>
+
+          <StackLayout row="1" col="0" margin="10">
+            <Label [text]="tagDescription" color="white" textWrap="true"></Label>
+          </StackLayout>
+
+          <GridLayout *ngIf="!loading" row="2" col="0" margin="10">
+            <RadListView
+                [items]="coin$" 
+                pullToRefresh="false"
+                selectionBehavior="None"
+                scrollDirection="Vertical">
+              <ng-template tkListItemTemplate let-item="item">               
+                <StackLayout (tap)=loadCoinDetailsPage(item)>                
+                  <StackLayout width="80" height="100" margin="5" backgroundColor="#463f40" borderRadius="5">                  
+                    <GridLayout rows="*,20" columns="*">
+                        <Image row="0" col="0" [src]="item?.path" width="90%" class="crypto-image"></Image>
+                        <Label row="1" col="0"color="white" [text]="item?.symbol" class="center-center" textWrap="true"></Label>
+                    </GridLayout>
+                  </StackLayout>
+                </StackLayout>
+              </ng-template>
+              <ListViewGridLayout tkListViewLayout ios:itemHeight="130%" scrollDirection='Vertical' spanCount="3"></ListViewGridLayout>
+            </RadListView>              
+          </GridLayout>
+
+          <GridLayout *ngIf="loading" row="2" col="0" margin="10">
+            <StackLayout height="200" width="200">
+                <ActivityIndicator margin="10" rowSpan="3" color="#ffffff" busy="true"></ActivityIndicator>
+            </StackLayout>
+          </GridLayout>
+
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>
+
+    
+  </StackLayout>
+
+
+</app-gradient-background>

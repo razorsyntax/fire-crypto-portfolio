@@ -1,0 +1,91 @@
+<StackLayout class="font-color default-background" borderRadius="5" marginTop="20" marginRight="20" marginLeft="20"
+  marginBottom="10">
+  <GridLayout rows="auto,auto,auto,auto,auto,auto,auto" columns="auto,*,auto">
+    <!-- Crypto Image -->
+    <Image row="0" col="0" rowSpan="7" [src]="headerObj.iconpath" android:width="30%" ios:width="30%" class="crypto-image">
+    </Image>
+
+    <!-- Crypto Ticker Symbol -->
+    <!-- <StackLayout row="8" col="0" class="crypto-ticker-symbol-background">
+      <Label [text]="headerObj.symbol" class="center-center crypto-ticker-fontsize"></Label>
+    </StackLayout> -->
+
+    <!-- Cryptocurrency Name -->
+    <StackLayout row="0" col="1" class="left-center" marginLeft="6">
+      <GridLayout rows="auto,auto" columns="*">
+          <Label row="0" col="0" [text]="headerObj.name" class="textfont-bold bold-weight fontsize-xxxl" textWrap="true"></Label>
+          <Label row="1" col="0" [text]="headerObj.symbol" class="crypto-ticker-fontsize"></Label>
+      </GridLayout>
+      
+    </StackLayout>
+
+    <!-- Portfolio Icon -->
+    <StackLayout row="0" col="2" class="right-center" marginRight="10" marginTop="10" (tap)="togglePortfolio(headerObj.symbol)">
+      <AbsoluteLayout>
+        <Label top="0" right="0"
+          width="40"
+          height="40"
+          [text]="portfolioIcon"
+          class="{{ inPortfolioClass }} fontawesome-solid textsize-hdr7 center-text">
+        </Label>
+        <Label top="22" left="21"
+          width="18"
+          height="18"
+          [text]="plusIcon"
+          class="{{ showAddToPortfolioPlusBtn }} fontawesome textsize-reg-md center-text">
+        </Label>
+      </AbsoluteLayout>
+
+    </StackLayout>
+
+    <!-- Portfolio Holdings -->
+    <StackLayout row="3" col="1" colSpan="3">
+        <GridLayout rows="*" columns="auto">
+            <StackLayout row="0" col="0" class="center-center">
+              <StackLayout *ngIf="inPortfolio; else notInPortfolio" class="center-center">
+                <StackLayout class="center-center">
+                  <Label android:class="center-center textsize-reg-md" ios:class="center-center text-size-md-reg" textWrap="true" margin="10">
+                    <FormattedString>
+                      <Span text="{{ headerObj.holdings + ' ' + headerObj.symbol }}" class=""></Span>
+                      <Span text="   (" class=""></Span>
+                      <Span 
+                        text="{{ loadTotalValue(headerObj.totalvalue) | customcurrency:headerObj.defaultcurrency }}" 
+                        class="textfont-bold text-blue">
+                      </Span>
+                      <Span text=")" class=""></Span>
+                    </FormattedString>
+                  </Label>
+                </StackLayout>
+              </StackLayout>
+              <ng-template #notInPortfolio>
+                <StackLayout class="center-center">
+                  <Label 
+                    [text]="'@@CoinDetailsPortfolioBoxComponent_NotInPortfolio' | L" 
+                    android:class="textsize-reg-md center-center"
+                    ios:class="text-size-md-reg center-center" 
+                    textWrap="true" 
+                    margin="10">
+                  </Label>
+                </StackLayout>
+              </ng-template>
+            </StackLayout>
+          </GridLayout>
+    </StackLayout>
+
+    <StackLayout row="7" col="1" marginLeft="10" marginTop="5">
+      <StackLayout *ngIf="inPortfolio">
+          <Label text="View Transactions" class="text-blue textsize-reg" (tap)="viewTransactions(headerObj.symbol)" textWrap="true"></Label>
+      </StackLayout>
+      
+    </StackLayout>
+    
+    <!-- Watchlist Icon -->
+      <Label row="7" col="2"
+        (tap)="toggleWatchlist(headerObj.symbol, headerObj.name, headerObj.id)"
+        [text]="watchlistIcon"
+        class="{{ inWatchlistClass }} fontawesome textsize-hdr7 center-text right-center"
+        marginRight="10" marginBottom="10">
+      </Label>
+    
+  </GridLayout>
+</StackLayout>

@@ -1,0 +1,7 @@
+<ng-container *ngTemplateOutlet="
+    templateRef;
+    context: {
+      $implicit: pricesAndInterval$ | async
+    }
+  ">
+</ng-container>

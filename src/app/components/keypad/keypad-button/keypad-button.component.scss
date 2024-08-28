@@ -1,0 +1,16 @@
+$grey1: #c4c4c4;
+$default-background-color: #342c2d;
+
+.pin-button {
+    background-color: $grey1;
+    border-radius: 50;
+    height: 75;
+    margin: 20;
+    width: 75;
+}
+
+.pin-button-label {
+    color: $default-background-color;
+    font-size: 46;
+    margin-top: 5;
+}

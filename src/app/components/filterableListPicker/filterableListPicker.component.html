@@ -1,0 +1,13 @@
+<StackLayout>
+  <StackLayout *ngIf="isEnabled">
+      <StackLayout>
+          <Label [text]="fieldText" (tap)="showPicker()" textWrap="true"></Label>
+          <FilterableListpicker #myfilter blur="dark" 
+            [hintText]="hintText" 
+            [source]="items" 
+            (canceled)="cancelFilterableList()"
+            (itemTapped)="itemTapped($event)">
+          </FilterableListpicker>
+      </StackLayout>
+  </StackLayout>
+</StackLayout>

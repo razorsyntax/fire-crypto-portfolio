@@ -1,0 +1,87 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+
+@import 'app-common';
+@import '~nativescript-theme-core/scss/platforms/index.android';
+@import '~nativescript-theme-core/scss/light';
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('./fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('./fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('./fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Fontawesome-Webfont';
+    src: url('./fonts/fontawesome-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'Fa-Solid-900';
+    src: url('./fonts/fa-solid-900.ttf');
+}
+
+@font-face {
+    font-family: 'icomoonFire';
+    src: url('./fonts/icomoonFire.ttf');
+}
+
+.fire-font {
+    font-family: 'icomoonFire', icomoonFire;
+}
+
+.textfont-reg {
+    font-family: 'Roboto-Regular';
+}
+
+.textfont-med {
+    font-family: 'Roboto-Medium';
+}
+
+.textfont-thin {
+    font-family: 'Roboto-Thin';
+}
+
+.textfont-light {
+    font-family: 'Roboto-Light';
+}
+
+.textfont-bold {
+    font-family: 'Roboto-Bold';
+}
+
+.fontawesome {
+    font-family: 'Fontawesome-Webfont', fontawesome-webfont;
+}
+
+.fontawesome-solid {
+    font-family: 'Fa-Solid-900', fa-solid-900;
+}

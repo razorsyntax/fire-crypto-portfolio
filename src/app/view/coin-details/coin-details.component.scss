@@ -1,0 +1,58 @@
+$white: #fff;
+$selected-blue: #3aa1e9;
+$unselected-grey: #525252;
+
+.font-color {
+    color: $white;
+}
+
+.fontsize-xxxl {
+    font-size: 23;
+}
+
+.in-watchlist {
+    color: $selected-blue;
+}
+
+.not-in-watchlist {
+    color: $unselected-grey;
+}
+
+.in-portfolio {
+    color: $selected-blue;
+}
+
+.not-in-portfolio {
+    color: $unselected-grey;
+}
+
+.bold-weight {
+    font-weight: bold;
+}
+
+.selected {
+    color: $white;
+}
+
+.unselected {
+    color: $unselected-grey;
+}
+
+.android :host .holdings-margin {
+    // margin-bottom: 7;
+    // margin-top: 7;
+}
+
+.ios :host .holdings-margin {
+    // margin-bottom: 5;
+    // margin-top: 5;
+}
+
+.metric-box {
+    border-bottom-left-radius: 3;
+    border-bottom-right-radius: 3;
+    height: 100%;
+    margin-bottom: 10;
+    margin-left: 20;
+    margin-right: 20;
+}

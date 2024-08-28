@@ -1,0 +1,21 @@
+$white: #fff;
+
+.list-group {
+    background-color: transparent;
+}
+
+.search-bar {
+    color: $white;
+    margin: 0;
+}
+
+.close-search {
+    color: $white;
+    font-size: 32;
+    margin-left: 20;
+    width: 30;
+}
+
+.search-background {
+    background-color: $white;
+}

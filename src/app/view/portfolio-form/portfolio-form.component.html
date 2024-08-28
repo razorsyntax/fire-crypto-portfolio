@@ -1,0 +1,48 @@
+<GridLayout height="100%" class="lintest">
+    <StackLayout height="100%" width="100%" color="white">
+      <ScrollView height="100%" width="100%">
+        <StackLayout>
+          <!-- header -->
+          <app-form-header [coinHeaderDetails]="headerObj"></app-form-header>
+          <!-- Middle Form -->
+          <StackLayout borderRadius="3" class="default-background" margin="10">
+            <app-portfolio-fields 
+              [obtainedTextField]="obtained" 
+              [exchangeTextField]="exchangeText"
+              [tradingPairTextField]="tradingpairText" 
+              [transferFromTextField]="transferfrom"
+              [transferToTextField]="transferto"
+              (tabSelected)="tabSelected($event)"
+              (optionSelected)="advancedOption($event)">
+            </app-portfolio-fields>
+          </StackLayout>
+        </StackLayout>
+      </ScrollView>
+    </StackLayout>
+
+    <AbsoluteLayout height="80" class="v-align-bottom" color="white">
+      <!-- Bottom Save/Pickers -->
+      <StackLayout height="100%" width="100%" class="v-align-bottom">
+        <!-- Save/cancel -->
+        <StackLayout height="100%" width="100%" class="v-align-bottom">
+          <GridLayout rows="auto,*" columns="*,*">
+            <Label row="0" col="0" colSpan="2" class="v-align-bottom" [text]="validationMessage" class="text-center"
+              textWrap="true"></Label>
+            <StackLayout height="60" width="50" row="1" col="0" class="v-align-bottom padding-btn">
+              <Label text="&#xF057;" (tap)="navigateBack()" class="fontawesome font-size-lrg center-bottom"></Label>
+            </StackLayout>
+            <StackLayout height="60" width="50" row="1" col="1" class="v-align-bottom padding-btn">
+              <Label text="&#xF058;" (tap)="submit()" class="fontawesome font-size-lrg center-bottom"></Label>
+            </StackLayout>
+          </GridLayout>
+        </StackLayout>
+      </StackLayout>
+    </AbsoluteLayout>
+
+    <FilterableListpicker #myfilter blur="dark" 
+      [hintText]="hintText" 
+      [source]="listPickerItems"
+      (canceled)="cancelFilterableList($event)" 
+      (itemTapped)="itemTapped($event)">
+    </FilterableListpicker>
+</GridLayout>

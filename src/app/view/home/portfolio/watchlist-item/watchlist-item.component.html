@@ -1,0 +1,44 @@
+<StackLayout height="80">
+    <StackLayout
+                orientation="horizontal" 
+                margin="8" 
+                width="auto" 
+                class="crypto-list-item default-background" 
+                borderRadius="5">
+        <GridLayout 
+                    columns="auto,*,auto" 
+                    rows="auto,auto" 
+                    class="list-group-item" 
+                    padding="8">
+            <Image 
+                        row="0" col="0" 
+                        [src]="watchlist?.crypto_icon" 
+                        rowSpan="2" 
+                        class="left-text" 
+                        height="50">
+            </Image>
+            <Label 
+                        row="0" col="1" 
+                        [text]="watchlist?.name" 
+                        class="crypto-name left-text textfont-light" 
+                        textWrap="false">
+            </Label>
+            <Label 
+                        row="1" col="1" 
+                        [text]="watchlist?.symbol" 
+                        class="crypto-symbol left-text textfont-light">
+            </Label>
+            <Label 
+                        row="0" col="2" 
+                        [text]="watchlist?.price | customcurrency:watchlist?.defaultcurrency" 
+                        class="crypto-price right-text textfont-light" 
+                        textWrap="true">
+            </Label>
+            <Label 
+                        row="1" col="2" 
+                        [text]="watchlist?.percent_change_24h | custompercent" 
+                        [class]="watchlist?.percent_color + ' text-right textsize-reg percent-text'">
+            </Label>
+        </GridLayout>
+    </StackLayout>
+</StackLayout>

@@ -1,0 +1,60 @@
+<StackLayout horizontalAlignment="stretch" height="100%" width="100%">
+   <StackLayout horizontalAlignment="stretch" height="100%" width="100%" [visibility]="hasData ? 'visible' : 'collapsed'">
+        <RadCartesianChart horizontalAlignment="stretch" height="100%" width="100%">
+            <CategoricalAxis
+                lineColor="#f5f5f5" 
+                hidden="true" 
+                lineHidden="true" 
+                lineThickness="1"
+                labelLayoutMode="Inner"
+                tkCartesianHorizontalAxis>
+            </CategoricalAxis>
+            <LinearAxis
+                lineColor="#f5f5f5"
+                hidden="true" 
+                lineHidden="true" 
+                lineThickness="1"
+                labelLayoutMode="Inner" 
+                [maximum]="max"
+                [minimum]="min"
+                tkCartesianVerticalAxis>
+            </LinearAxis>
+            <AreaSeries
+                tkCartesianSeries 
+                seriesName="Area" 
+                showLabels="false" 
+                categoryProperty="Date" 
+                [items]="areaSource$ | async"
+                valueProperty="Amount" 
+                selectionMode="None">
+            </AreaSeries>
+            <RadCartesianChartGrid 
+                tkCartesianGrid 
+                horizontalLinesVisible="false" 
+                verticalLinesVisible="false" 
+                verticalStripLinesVisible="false"
+                horizontalStripLinesVisible="false" 
+                horizontalStrokeColor="#181818">
+            </RadCartesianChartGrid>
+            <Palette tkCartesianPalette seriesName="Area">
+                <PaletteEntry
+                    tkCartesianPaletteEntry
+                    opacity="1" 
+                    [fillColor]="fillColor"
+                    [strokeColor]="lineColor"
+                    android:strokeWidth="4"
+                    ios:strokeWidth="2">
+                </PaletteEntry>
+                <!-- <PaletteEntry 
+                    tkCartesianPaletteEntry 
+                    fillColor="#181818" 
+                    strokeColor="#181818" 
+                    strokeWidth="0">
+                </PaletteEntry> -->
+            </Palette>
+        </RadCartesianChart>
+    </StackLayout>
+    <StackLayout [visibility]="!hasData ? 'visible' : 'collapsed'">
+        <Label text="" class="font-color textsize-sm center-center" textWrap="true"></Label>
+    </StackLayout> 
+</StackLayout>

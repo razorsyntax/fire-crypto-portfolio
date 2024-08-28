@@ -1,0 +1,52 @@
+<StackLayout>
+  <GridLayout>
+    <GridLayout>
+      <StackLayout marginRight="10" marginLeft="10">
+        <!-- <StackLayout *ngIf="hasTransactions; else addtoportfolio" > -->
+        <StackLayout [visibility]="hasTransactions ? 'visible' : 'collapsed'">
+          <StackLayout borderRadius="3" marginTop="10" class="font-color center-center" backgroundColor="#2a2424">
+            <Label
+              ios:fontSize="13"
+              padding="5"
+              [text]="addTransactionText"
+              class="center-center"
+              (tap)="addTransaction($event, 'add new transaction')"
+             ></Label>
+          </StackLayout>
+          <StackLayout height="100%" paddingBottom="20">
+            <ListView [items]="transactions" (loaded)="onLoaded($event)" (itemLoading)="onItemLoading($event)"
+              separatorColor="transparent" class="list-group default-background" height="100%">
+              <ng-template let-item="item" let-odd="odd" let-even="even">
+                <StackLayout class="default-background" (tap)="onItemTap(item)">
+                  <GridLayout rows="auto,auto" columns="*">
+                    <StackLayout row="0" col="0" class="center-center" width="1" height="15" backgroundColor="#c4c4c4"></StackLayout>
+                    <StackLayout row="1" col="0" [ngClass]="item.backgroundType" marginRight="10" marginLeft="10" width="auto"
+                      borderRadius="3">
+                      <StackLayout backgroundColor="rgba(0,0,0,0.2)" padding="10">
+                        <Label [text]="item.lineOne" class="font-color center-center center-text" textWrap="true"
+                          ios:fontSize="12"></Label>
+                        <Label [text]="item.lineTwo" class="font-color center-center" ios:fontSize="12"></Label>
+                      </StackLayout>
+                    </StackLayout>
+                  </GridLayout>
+                </StackLayout>
+              </ng-template>
+            </ListView>
+          </StackLayout>
+        </StackLayout>
+        <!-- </StackLayout> -->
+        <!-- <ng-template #addtoportfolio> -->
+        <StackLayout (tap)="addTransaction($event, 'add to portfolio')" [visibility]="!hasTransactions ? 'visible' : 'collapsed'">
+          <app-list-placeholder [iconText]="'&#xf055;'" [placeholderText]="placeholderText" [height]="250"></app-list-placeholder>
+        </StackLayout>
+        <!-- </ng-template> -->
+
+      </StackLayout>
+    </GridLayout>
+    <app-simple-dialog [buttons]="dialogButtons" [toggleDialog]="dialogOpen" (buttonEvent)="dialogTransactionButtonEvent($event)">
+      <StackLayout>
+        <Label [text]="dialogBodyText" textWrap="true" color="#ffffff" class="h-align-center"></Label>
+      </StackLayout>
+    </app-simple-dialog>
+  </GridLayout>
+</StackLayout>

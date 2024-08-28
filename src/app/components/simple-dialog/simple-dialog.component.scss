@@ -1,0 +1,31 @@
+$white: #fff;
+$dialog-border: rgb(182, 180, 180);
+$primary-button-color: #3aa1e9;
+$dialog-background-color: #221d1d;
+
+.primary {
+    background-color: $primary-button-color;
+    color: $white;
+    text-transform: capitalize;
+}
+
+.outline {
+    border-color: $white;
+    border-width: 2;
+    color: $white;
+    text-transform: capitalize;
+}
+
+.dialog {
+    background-color: $dialog-background-color;
+    border-color: $dialog-border;
+    border-radius: 5;
+    border-width: 1;
+    padding: 10;
+    width: 90%;
+}
+
+.btn {
+    border-radius: 3;
+}
+

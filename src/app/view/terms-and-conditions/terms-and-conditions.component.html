@@ -1,0 +1,30 @@
+<app-gradient-background>
+  <StackLayout margin="20" class="default-background" borderRadius="5" color="white">
+    <StackLayout marginTop="10">
+      <GridLayout rows="auto,*" columns="*">
+        <StackLayout row="0" col="0">
+          <Label row="0" col="0" text="&#xF104;" marginLeft="0" paddingLeft="20" (tap)="backToSettings()" class="fontawesome textsize-huge h-align-left"></Label>
+        </StackLayout>
+        <Label row="0" col="1" [text]="titleText" class="textsize-lrg center-center" textWrap="false"></Label>
+        <StackLayout row="1" col="0" class="font-color" padding="20">
+          <ScrollView width="100%" height="100%">
+            <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" cols="*">
+              <Label row="0" col="0" [text]="paragraph1" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="1" col="0" [text]="paragraph2" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="2" col="0" [text]="paragraph3" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="3" col="0" [text]="paragraph4" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="4" col="0" [text]="paragraph5" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="5" col="0" [text]="paragraph6" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="6" col="0" [text]="paragraph7" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="7" col="0" [text]="paragraph8" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="8" col="0" [text]="subheadingOne" class="section-heading textsize-md" textWrap="true"></Label>
+              <Label row="9" col="0" [text]="paragraph9" class="textsize-sm paragraph-section" textWrap="true"></Label>
+              <Label row="10" col="0" [text]="subheadingTwo" class="section-heading textsize-md" textWrap="true"></Label>
+              <Label row="11" col="0" [text]="paragraph10" class="textsize-sm paragraph-section" textWrap="true"></Label>
+            </GridLayout>
+          </ScrollView>
+        </StackLayout>
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>
+</app-gradient-background>

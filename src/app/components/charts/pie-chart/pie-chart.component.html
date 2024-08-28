@@ -1,0 +1,28 @@
+<StackLayout [visibility]="isVisible ? 'visible' : 'collapsed'">
+  <RadPieChart height="500" allowAnimation="true">
+    <PieSeries 
+        tkPieSeries
+        seriesName="pie"
+        selectionMode="DataPoint" 
+        expandRadius="0.4" 
+        outerRadiusFactor="0.7" 
+        [items]="pieSource" 
+        valueProperty="Amount"
+        legendLabel="Symbol"
+        showLabels="false">
+    </PieSeries>
+    <RadLegendView
+        tkPieLegend 
+        position="Right" 
+        title="" 
+        offsetOrigin="TopRight" 
+        width="110" 
+        enableSelection="false">
+    </RadLegendView>
+    <Palette tkPiePalette seriesName="pie">
+      <!-- <PaletteEntry tkPiePaletteEntry fillColor="#d73406" strokeColor="#d73406"></PaletteEntry>
+      <PaletteEntry tkPiePaletteEntry fillColor="#4a78be" strokeColor="#4a78be"></PaletteEntry>
+      <PaletteEntry tkPiePaletteEntry fillColor="#5abe4a" strokeColor="#5abe4a"></PaletteEntry> -->
+    </Palette>
+  </RadPieChart>
+</StackLayout>

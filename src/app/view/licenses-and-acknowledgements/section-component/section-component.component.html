@@ -1,0 +1,11 @@
+<StackLayout class="font-color" padding="20">
+  <Label [text]="subSectionItems.sectiontitle" class="section-heading" textWrap="true"></Label>
+  <StackLayout *ngFor="let item of subSectionItems.section">
+    <Label [text]="item.subsection" class="sub-heading" textWrap="true"></Label>
+    <Label android:fontSize="15" io:fontSize="15" textWrap="true" marginBottom="7" (tap)="navigateToWebpage(item.link)">
+      <FormattedString>
+        <Span [text]="item.link" class="url-link" color="#ffffff"></Span>
+      </FormattedString>
+    </Label>
+  </StackLayout>
+</StackLayout>

@@ -1,0 +1,44 @@
+<StackLayout class="font-color default-background" borderBottomLeftRadius="5" borderBottomRightRadius="5"
+  marginRight="20" marginLeft="20" marginBottom="10">
+  <GridLayout rows="auto,auto,auto,auto" columns="*">
+    <Label row="0" col="0" text="Coin Details" android:class="android-meta-text" ios:class="ios-meta-text" fontSize="24"
+      textWrap="true" margin="10"></Label>
+
+    <StackLayout row="1" col="0">
+      <app-description-truncate [longString]="description"></app-description-truncate>
+    </StackLayout>
+
+    <StackLayout row="2" col="0" marginRight="10" marginBottom="10" marginLeft="10">
+      <app-chips [chipArr]="tags" (selectedChip)="tagSelected($event)"></app-chips>
+    </StackLayout>
+
+    <StackLayout row="3" col="0" width="100%">
+      <StackLayout marginBottom="10">
+        <GridLayout>
+          <RadListView
+              #radList
+              height="30" 
+              [items]="coinlinks" 
+              pullToRefresh="false" 
+              scrollDirection="Horizontal"
+              selectionBehavior="None">
+            <ng-template tkListItemTemplate let-item="item">
+              <StackLayout marginRight="10" marginLeft="10">
+                <Label [text]="item?.icon" (tap)="checkLink(item?.url)" class="fontawesome" android:fontSize="18" ios:fontSize="22"></Label>
+              </StackLayout>
+            </ng-template>
+            <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearLayout>
+          </RadListView>    
+        </GridLayout>          
+      </StackLayout>
+
+
+
+      <!-- <GridLayout rows="auto" [columns]="gridCol" *ngFor="let item of coinlinks; let i = index"> -->
+        
+          
+      <!-- </GridLayout> -->
+    </StackLayout>
+  </GridLayout>
+
+</StackLayout>

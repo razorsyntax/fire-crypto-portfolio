@@ -1,0 +1,7 @@
+<GridLayout height="100%">
+  <WrapLayout orientation="horizontal" width="100%" margin="10">
+    <StackLayout *ngFor="let chip of chips" backgroundColor="#e4e4e4" borderRadius="2" margin="3">
+      <Label [text]="chip.text" (tap)="chipSelected(chip.value)" color="black" textWrap="true" marginRight="4" marginLeft="4"></Label>
+    </StackLayout>
+  </WrapLayout>
+</GridLayout>

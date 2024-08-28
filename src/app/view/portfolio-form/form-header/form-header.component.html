@@ -1,0 +1,23 @@
+<StackLayout height="100%" margin="10" height="100" borderRadius="3" class="default-background v-align-center">
+    <StackLayout margin="5" backgroundColor="#292323">
+
+      <GridLayout rows="auto," columns="*,*,*">
+
+        <!-- Coin Name -->
+        <StackLayout row="0" col="0" class="center-center">
+          <Label [text]="coinHeaderDetails.coinName" class="textsize-med" textWrap="true"></Label>
+        </StackLayout>
+
+        <!-- Coin Image -->
+        <StackLayout row="0" col="1" class="center-center">
+          <Image [src]="iconPath" width="85"></Image>
+        </StackLayout>
+
+        <!-- Placeholder -->
+        <StackLayout row="0" col="2" class="center-center">
+          <Label [text]="coinHeaderDetails.coinPrice" class="textsize-med" textWrap="true"></Label>
+        </StackLayout>
+
+      </GridLayout>
+    </StackLayout>
+  </StackLayout>

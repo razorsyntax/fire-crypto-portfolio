@@ -1,0 +1,374 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+
+@import '~nativescript-theme-core/scss/light';
+@import '~nativescript-theme-core/scss/index';
+
+/* COLOR DECLARATIONS */
+$white: #fff;
+$grey1: #c4c4c4;
+$black: #000;
+$unselected-font-color: #3a3a3a;
+$secondary-font-color: #e2e2e2;
+$default-background-color: #342c2d;
+$blue-text: #3aa1e9;
+$green: #3ee129; // price up
+$red: #a82f27; // price down
+$lightcoral: #f08080;
+$orange: #e16806;
+$redbkgrd: #d21e06;
+
+.percent-down {
+    color: $red;
+}
+
+.percent-up {
+    color: $green;
+}
+
+.percent-down-bkg {
+    background-color: $red;
+}
+
+.percent-up-bkg {
+    background-color: $green;
+}
+
+/**
+* FONTS
+*/
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('./fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('./fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('./fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('./fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('./fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Fontawesome-Webfont';
+    src: url('./fonts/fontawesome-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'Fa-Solid-900';
+    src: url('./fonts/fa-solid-900.ttf');
+}
+
+@font-face {
+    font-family: 'icomoonFire';
+    src: url('./fonts/icomoonFire.ttf');
+}
+
+.fire-font {
+    font-family: 'icomoonFire', iconmoonFire;
+}
+
+.textfont-reg {
+    font-family: 'Roboto-Regular';
+}
+
+.textfont-med {
+    font-family: 'Roboto-Medium';
+}
+
+.textfont-thin {
+    font-family: 'Roboto-Thin';
+}
+
+.textfont-light {
+    font-family: 'Roboto-Light';
+}
+
+.textfont-bold {
+    font-family: 'Roboto-Bold';
+}
+
+.fontawesome {
+    font-family: 'Fontawesome-Webfont', 'FontAwesome', fontawesome-webfont;
+}
+
+.fontawesome-solid {
+    font-family: 'Fa-Solid-900', fa-solid-900;
+}
+
+.font-color {
+    color: $white;
+}
+
+.unselected-font-color {
+    color: $unselected-font-color;
+}
+
+.font-secondary {
+    color: $secondary-font-color;
+}
+
+/**
+ * TEXT ALIGN
+ */
+
+.center-text {
+    text-align: center;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.left-text {
+    text-align: left;
+}
+
+/**
+ * FONT-SIZE
+ */
+
+.textsize-sm {
+    font-size: 12;
+}
+
+.textsize-sm-md {
+    font-size: 14;
+}
+
+.text-size-md-reg {
+    font-size: 15;
+}
+
+.textsize-reg {
+    font-size: 16;
+}
+
+.textsize-reg-md {
+    font-size: 17;
+}
+
+.textsize-med {
+    font-size: 18;
+}
+
+.textsize-med-reg {
+    font-size: 20;
+}
+
+.textsize-lrg {
+    font-size: 22;
+}
+
+.textsize-hdr3 {
+    font-size: 25;
+}
+
+.textsize-hdr4 {
+    font-size: 27;
+}
+
+.textsize-hdr6 {
+    font-size: 30;
+}
+
+.textsize-hdr7 {
+    font-size: 36;
+}
+
+.textsize-huge {
+    font-size: 42;
+}
+
+.textsize-30 {
+    font-size: 30;
+}
+
+/**
+ * COLORS
+ */
+
+.default-background {
+    background-color: $default-background-color;
+}
+
+.activity-indicator {
+    color: $white;
+}
+
+.text-blue {
+    color: $blue-text;
+}
+
+/**
+ * ALIGNMENTS
+ */
+
+.h-align-center {
+    horizontal-align: center;
+}
+
+.h-align-right {
+    horizontal-align: right;
+}
+
+.h-align-left {
+    horizontal-align: left;
+}
+
+.h-align-strech {
+    horizontal-align: stretch;
+}
+
+.v-align-center {
+    vertical-align: center;
+}
+
+.v-align-middle {
+    vertical-align: middle;
+}
+
+.v-align-top {
+    vertical-align: top;
+}
+
+.v-align-bottom {
+    vertical-align: bottom;
+}
+
+.v-align-stretch {
+    vertical-align: stretch;
+}
+
+.center-center {
+    horizontal-align: center;
+    vertical-align: center;
+}
+
+.left-center {
+    horizontal-align: left;
+    vertical-align: center;
+}
+
+.left-right {
+    horizontal-align: left;
+    vertical-align: right;
+}
+
+.right-left {
+    horizontal-align: right;
+    vertical-align: left;
+}
+
+.right-center {
+    horizontal-align: right;
+    vertical-align: center;
+}
+
+.center-bottom {
+    horizontal-align: center;
+    vertical-align: bottom;
+}
+
+.bold-weight {
+    font-weight: bold;
+}
+
+/*
+ * Styling for Filterable ListPicker
+*/
+
+.flp-container .flp-list-container {
+    border-radius: 10;
+}
+
+.flp-container .flp-list-container .flp-listview {
+    background-color: $default-background-color;
+}
+
+// Items in the list
+.flp-container .flp-list-container .flp-listview .flp-row {
+    background-color: $default-background-color;
+    color: $white;
+    font-size: 18;
+    padding: 15 10;
+}
+
+/* .flp-container .flp-list-container .flp-listview .flp-row .flp-row-container {
+    padding: 10;
+  } */
+.flp-container .flp-list-container .flp-listview .flp-row .flp-image {
+    margin: 10 0 10 5;
+}
+
+.flp-container .flp-list-container .flp-listview .flp-row .flp-title-container {
+    margin: 10 10 10 5;
+    /* margin: 0 10 0 10; */
+}
+
+.flp-container .flp-list-container .flp-listview .flp-row .flp-title-container .flp-title {
+    font-size: 16;
+    font-weight: bold;
+}
+
+.flp-container .flp-list-container .flp-listview .flp-row .flp-title-container .flp-description {
+    color: $white;
+    font-size: 16;
+}
+
+.flp-container .flp-list-container .flp-listview .flp-row .flp-title-container .flp-no-title {
+    margin-left: 15;
+    padding: 10 0;
+}
+
+.flp-container .flp-list-container .flp-listview .flp-row .flp-item-selected {
+    color: $lightcoral;
+}
+
+// Input text
+.flp-container .flp-hint-field {
+    background-color: $white;
+    border-radius: 10 10 0 0;
+    color: $black;
+    height: 40;
+    padding: 10 15;
+}
+
+.flp-container .flp-cancel-container {
+    background-color: $default-background-color;
+    border-radius: 0 0 10 10;
+    color: $white;
+    height: 40;
+}
+
+.flp-container .flp-cancel-container .flp-btn-cancel {
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1;
+    font-size: 14;
+    font-weight: bold;
+    height: 40;
+}
+
