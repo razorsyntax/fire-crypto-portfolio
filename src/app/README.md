@@ -63,7 +63,7 @@ Steps that seems to work:
 * android:versionCode="{next increment}"
 * android:versionName="{next increment}"
 
-2) Change Nativescript Id in package.json for Andoid to: `org.nativescript.fireportfolio`
+2) Change Nativescript Id in package.json for Andoid to: `com.{whateverthis}.{is}`
 
 3) Also Enable Angular Production Mode in `main.ts`
 
@@ -78,7 +78,7 @@ Steps that seems to work:
 ### iOS
 Bundle ID: `com.nativescript.firecryptoportfolio`
 
-NOTE: Be sure to change package.json Nativescript Id to: `com.nativescript.firecryptoportfolio`
+NOTE: Be sure to change package.json Nativescript Id to: `com.{whateverthis}.{is}`
 
 1) Update version number in Info.plist under `CFBundleShortVersionString` & `CFBundleVersion`
 
