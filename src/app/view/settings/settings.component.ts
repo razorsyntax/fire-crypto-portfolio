@@ -12,8 +12,8 @@ import { UtilitiesProvider } from '~/app/providers/utilities.provider';
 
 
 export enum URLS {
-  TWITTER = 'https://twitter.com/biomance',
-  TELEGRAM = 'https://t.me/fireportfolio'
+  TWITTER = '',
+  TELEGRAM = ''
 }
 
 @Component({

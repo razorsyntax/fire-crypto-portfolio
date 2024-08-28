@@ -19,7 +19,7 @@ export class GetService {
 
   // private readonly cryptoControlAPIVersion = 'v1/';
   // private readonly cryptoControlBaseURL = `https://cryptocontrol.io/api/${this.cryptoControlAPIVersion}/public/`;
-  // private readonly cryptoControlAPIKey = 'b7574f8fa2ce850e0f643f2396cd8b2f';
+  // private readonly cryptoControlAPIKey = '';
 
   // Gold/Silver Spot Prices
   private readonly stooqBaseURL = 'https://stooq.com/';
@@ -212,7 +212,7 @@ export class GetService {
    * Precious Metals spot price in USD. Not historic.
    * Gold: xauusd
    * Silver: xagusd
-   * 
+   *
    * https://stooq.com/q/l/?s=${preciousMetal}&f=sd2t2ohlc&h&e=json
    */
   public getPreciousMetalsPrice(preciousMetal: string): Promise<HttpResponse> {
@@ -223,7 +223,7 @@ export class GetService {
 
   /**
    * Precious Metals Historic
-   * 
+   *
    * Returns a text csv in the format:
    *    "Date,Open,High,Low,Close
    *    1792-03-01,1.29,1.29,1.29,1.29
@@ -234,7 +234,7 @@ export class GetService {
    *    1793-06-01,1.29,1.29,1.29,1.29
    *    1793-09-01,1.29,1.29,1.29,1.29
    *    ..."
-   * 
+   *
    * Use case:
    * this.getService$.getPreciousMetalsHistoricPrice('xagusd').pipe(
    *    map(csv => this.metalsCSVtoJSON(csv))

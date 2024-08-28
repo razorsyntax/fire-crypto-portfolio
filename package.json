@@ -1,8 +1,11 @@
 {
-  "name": "fire-portfolio",
+  "name": "fire-crypto-portfolio",
   "main": "./src/app/main.ts",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "David Black"
+  },
   "scripts": {
     "debug:ios": "ns debug ios --inspector",
     "debug:and:d": "ns debug android",

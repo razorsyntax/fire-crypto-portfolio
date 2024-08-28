@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.fireportfolio',
+  id: 'com.{wheverthis}.{is}',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {

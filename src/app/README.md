@@ -76,7 +76,7 @@ Steps that seems to work:
 `tns build android --release --key-store-path ~/keystores/android.jks --key-store-password <your-key-store-password> --key-store-alias key0 --key-store-alias-password <your-alias-password> --aab --copy-to <aab-location>.aab`
 
 ### iOS
-Bundle ID: `com.nativescript.firecryptoportfolio`
+Bundle ID: `com.{whateverthis}.{is}`
 
 NOTE: Be sure to change package.json Nativescript Id to: `com.{whateverthis}.{is}`
 
@@ -140,7 +140,7 @@ c) Run: `tns platform remove <android/ios> && tns platform add <android/ios>`
 
 ## Troubleshooting
 
-### "WARNING: Xcode is not installed or is not configured properly." 
+### "WARNING: Xcode is not installed or is not configured properly."
 If Nativescript was updated or your local environment/os/etc has been changed this message can appear when trying to run a `tns <command>`.
 
 ### Try:

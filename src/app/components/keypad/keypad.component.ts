@@ -1,4 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+/**
+ * Custom UI Authentication screen for signing into Fire using a pin number
+ */
 
 @Component({
   moduleId: module.id,
@@ -16,5 +19,5 @@ export class KeypadComponent implements OnInit {
   btnPressed(btnKey) {
     this.buttonPress.emit(btnKey);
   }
-  
+
 }

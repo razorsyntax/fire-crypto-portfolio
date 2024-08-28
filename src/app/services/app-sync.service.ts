@@ -8,11 +8,11 @@
 // @Injectable()
 // export class AppSyncService {
 
-//     // private static APPSYNC_IOS_STAGING_KEY = 'zprNPYsRu6I4BKwFEj1C2aAj2S4ivv21PTUhu';
-//     private static APPSYNC_IOS_PRODUCTION_KEY = 'SZ1fK1wnL54L1oCrITdC2FLvFtdmvv21PTUhu';
+//     // private static APPSYNC_IOS_STAGING_KEY = '';
+//     private static APPSYNC_IOS_PRODUCTION_KEY = '';
 
-//     // private static APPSYNC_ANDROID_STAGING_KEY = 'ZxqGuRGZTfRJCuviB5kRRut8TDlwvv21PTUhu';
-//     private static APPSYNC_ANDROID_PRODUCTION_KEY = 'RKMRetTSZCeGZf9dax8Sw234l5Fivv21PTUhu';
+//     // private static APPSYNC_ANDROID_STAGING_KEY = '';
+//     private static APPSYNC_ANDROID_PRODUCTION_KEY = '';
 
 //     syncOptions = {
 //         deploymentKey: isIOS ? AppSyncService.APPSYNC_IOS_PRODUCTION_KEY : AppSyncService.APPSYNC_ANDROID_PRODUCTION_KEY,

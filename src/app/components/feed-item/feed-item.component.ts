@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Used for the News Feed
+ */
+
 @Component({
   selector: 'app-feed-item',
   templateUrl: './feed-item.component.html',
